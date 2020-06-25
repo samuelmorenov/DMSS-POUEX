@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<POUEX:Mascota xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:POUEX="http://POUEX/1.0" nombre="Pou">
+  <realizar nombre="Tiempo">
+    <causa modifica="//@poseer.0" nombre="MenosFelTiempo" valorModifica="-1"/>
+    <causa modifica="//@poseer.3" nombre="MasCansancioTiempo" valorModifica="-1"/>
+    <causa modifica="//@poseer.4" nombre="MasHambreTiempo" valorModifica="1"/>
+    <causa modifica="//@poseer.1" nombre="MasSuciTiempo" valorModifica="1"/>
+  </realizar>
+  <realizar nombre="Jugar">
+    <causa modifica="//@poseer.0" nombre="MasFelJugar" valorModifica="2"/>
+    <causa modifica="//@poseer.2" nombre="MenosMasaJugar" valorModifica="-1"/>
+    <causa modifica="//@poseer.3" nombre="MasCansanciojUGAR" valorModifica="2"/>
+    <causa modifica="//@poseer.4" nombre="MasHambreJugar" valorModifica="1"/>
+  </realizar>
+  <realizar nombre="Comer">
+    <causa modifica="//@poseer.4" nombre="MenoHambreComer" valorModifica="-3"/>
+    <causa modifica="//@poseer.2" nombre="MasMasaComer" valorModifica="2"/>
+    <causa modifica="//@poseer.1" nombre="MasSuciComer" valorModifica="1"/>
+    <causa modifica="//@poseer.0" nombre="MasFelComer" valorModifica="1"/>
+  </realizar>
+  <realizar nombre="Limpiar">
+    <causa modifica="//@poseer.0" nombre="MenosFelLimpiar" valorModifica="-1"/>
+    <causa modifica="//@poseer.1" nombre="MenosSuciLimpiar" valorModifica="-3"/>
+    <causa modifica="//@poseer.4" nombre="MasHambreLimpiar" valorModifica="1"/>
+    <causa modifica="//@poseer.3" nombre="MasCansancioLimpiar" valorModifica="1"/>
+  </realizar>
+  <realizar nombre="Dormir">
+    <causa modifica="//@poseer.4" nombre="MasHambreDormir" valorModifica="1"/>
+    <causa modifica="//@poseer.3" nombre="MenosCansancioDormir" valorModifica="-3"/>
+    <causa modifica="//@poseer.1" nombre="MasSuciDormir" valorModifica="1"/>
+  </realizar>
+  <realizar nombre="HacerEjercicio">
+    <causa modifica="//@poseer.2" nombre="EfectHacerEjerMasaCorpo" valorModifica="-3"/>
+    <causa modifica="//@poseer.0" nombre="EfectHacerEjerFelicidad" valorModifica="-2"/>
+    <causa modifica="//@poseer.1" nombre="EfectHacerEjerSuciedad" valorModifica="1"/>
+    <causa modifica="//@poseer.4" nombre="EfectHacerEjerHambre" valorModifica="1"/>
+    <causa modifica="//@poseer.3" nombre="EfectHacerEjercicioCansancio" valorModifica="1"/>
+  </realizar>
+  <poseer xsi:type="POUEX:Emocionales" nombre="Felicidad" valor="4" valorMax="10" modificada="//@realizar.0/@causa.0 //@realizar.1/@causa.0 //@realizar.2/@causa.3 //@realizar.3/@causa.0 //@realizar.5/@causa.1" beneficioso="true">
+    <causar modificar="//@estar.1" nombre="TransTristezaEx"/>
+    <causar modificar="//@estar.2" valorCambio="7" nombre="TransFeliz"/>
+    <causar modificar="//@estar.5" valorCambio="3" nombre="TransTriste"/>
+  </poseer>
+  <poseer xsi:type="POUEX:Fisicas" nombre="Suciedad" valor="4" valorMax="10" modificada="//@realizar.0/@causa.3 //@realizar.2/@causa.2 //@realizar.3/@causa.1 //@realizar.4/@causa.2 //@realizar.5/@causa.2">
+    <causar modificar="//@estar.0" valorCambio="9" nombre="TransSuciMuerto"/>
+    <causar modificar="//@estar.3" valorCambio="6" nombre="TranSuciLimpio"/>
+    <causar modificar="//@estar.6" valorCambio="3" nombre="TransSuciSuci"/>
+  </poseer>
+  <poseer xsi:type="POUEX:Fisicas" nombre="MasaCorporal" valor="4" valorMax="10" modificada="//@realizar.1/@causa.1 //@realizar.2/@causa.1 //@realizar.5/@causa.0">
+    <causar modificar="//@estar.0" valorCambio="9" nombre="TransMuerteMasa"/>
+    <causar modificar="//@estar.4" valorCambio="6" nombre="TranGordo"/>
+    <causar modificar="//@estar.11" valorCambio="3" nombre="TransMasaDelgado"/>
+  </poseer>
+  <poseer xsi:type="POUEX:Emocionales" nombre="Cansancio" valor="4" valorMax="10" modificada="//@realizar.0/@causa.1 //@realizar.1/@causa.2 //@realizar.3/@causa.3 //@realizar.4/@causa.1 //@realizar.5/@causa.4">
+    <causar modificar="//@estar.0" valorCambio="9" nombre="TranCansancioMuerte"/>
+    <causar modificar="//@estar.7" valorCambio="6" nombre="TransCansancioCansado"/>
+    <causar modificar="//@estar.8" valorCambio="3" nombre="TransCansadoDescansado"/>
+  </poseer>
+  <poseer xsi:type="POUEX:Emocionales" nombre="Hambre" valor="4" valorMax="10" modificada="//@realizar.0/@causa.2 //@realizar.1/@causa.3 //@realizar.2/@causa.0 //@realizar.3/@causa.2 //@realizar.4/@causa.0 //@realizar.5/@causa.3">
+    <causar modificar="//@estar.0" valorCambio="9" nombre="TranHambreMuerto"/>
+    <causar modificar="//@estar.9" valorCambio="3" nombre="TranHambreNoHambre"/>
+    <causar modificar="//@estar.10" valorCambio="6" nombre="TransHambreHambriento"/>
+  </poseer>
+  <estar xsi:type="POUEX:Criticos" nombre="Muerte" modificado="//@poseer.1/@causar.0 //@poseer.2/@causar.0 //@poseer.3/@causar.0 //@poseer.4/@causar.0"/>
+  <estar xsi:type="POUEX:Criticos" nombre="TristezaExtrema" modificado="//@poseer.0/@causar.0"/>
+  <estar xsi:type="POUEX:Normales" nombre="Feliz" beneficioso="true" modificado="//@poseer.0/@causar.1"/>
+  <estar xsi:type="POUEX:Normales" nombre="Limpio" beneficioso="true" modificado="//@poseer.1/@causar.1"/>
+  <estar xsi:type="POUEX:Normales" nombre="Gordo" modificado="//@poseer.2/@causar.1"/>
+  <estar xsi:type="POUEX:Normales" nombre="Triste" modificado="//@poseer.0/@causar.2"/>
+  <estar xsi:type="POUEX:Normales" nombre="Sucio" modificado="//@poseer.1/@causar.2"/>
+  <estar xsi:type="POUEX:Normales" nombre="Cansado" modificado="//@poseer.3/@causar.1"/>
+  <estar xsi:type="POUEX:Normales" nombre="Descansado" beneficioso="true" modificado="//@poseer.3/@causar.2"/>
+  <estar xsi:type="POUEX:Normales" nombre="NoHambriento" beneficioso="true" modificado="//@poseer.4/@causar.1"/>
+  <estar xsi:type="POUEX:Normales" nombre="Hambriento" modificado="//@poseer.4/@causar.2"/>
+  <estar xsi:type="POUEX:Normales" nombre="Delgado" beneficioso="true" modificado="//@poseer.2/@causar.2"/>
+</POUEX:Mascota>

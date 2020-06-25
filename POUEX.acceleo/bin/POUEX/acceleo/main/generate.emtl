@@ -1,0 +1,1749 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generate" nsURI="POUEX::acceleo::main::generate" startHeaderPosition="29" endHeaderPosition="137">
+    <input>
+      <takesTypesFrom href="http://POUEX/1.0#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateElement" visibility="Public" main="true">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;import java.util.ArrayList;&#xA;import java.util.Scanner;&#xA;public class Mascota {&#xA;&#x9;private String nombre;&#xA;&#x9;private boolean finDelJuego = false;&#xA;&#x9;private static ArrayList&lt;Acciones> acciones = new ArrayList&lt;Acciones>();&#xA;&#x9;private static ArrayList&lt;Estados> estados = new ArrayList&lt;Estados>();&#xA;&#x9;private static ArrayList&lt;Caracteristicas> caracteristicas = new ArrayList&lt;Caracteristicas>();&#xA;&#xA;&#x9;public Mascota(String _nombre) {&#xA;&#x9;&#x9;nombre = _nombre;&#xA;&#x9;}&#xA;&#xA;&#x9;public static Mascota crearMascota() {&#xA;&#x9;&#x9;// Creacion de Mascota&#xA;&#x9;&#x9;Mascota M = new Mascota(&quot;"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aMascota" referredVariable="/0/generateElement/aMascota">
+            <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Mascota/nombre"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;);&#xA;&#xA;&#x9;&#x9;// Creacion de estados&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;Estados "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Estados/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.3/a">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(&quot;"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Estados/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Estados/beneficioso"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Estados/estado"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;&#x9;&#x9;M.anhadirEstado("/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.3/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Estados/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+          <loopVariable name="a">
+            <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Estados)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aMascota" referredVariable="/0/generateElement/aMascota">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Mascota/estar"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;// Creacion de Caracteristicas&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;Caracteristicas "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+              </source>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/emf/2002/Ecore#//EObject/eClass"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/emf/2002/Ecore#//ENamedElement/name"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="(&quot;"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/beneficioso"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/valor"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/valorMax"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;Transiciones "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.5/%.13/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Transiciones/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new Transiciones(&quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.5/%.13/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Transiciones/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.5/%.13/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Transiciones/valorCambio"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.5/%.13/b">
+                  <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Transiciones/modificar"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Estados/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;&#x9;&#x9;&#x9;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".anhadirTransicion("/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.5/%.13/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Transiciones/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+            <loopVariable name="b">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Transiciones)">
+              <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Caracteristicas/causar"/>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;M.anhadirCaracteristica("/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.5/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#x9;&#xA;"/>
+          <loopVariable name="a">
+            <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Caracteristicas)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aMascota" referredVariable="/0/generateElement/aMascota">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Mascota/poseer"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;// Creacion de Acciones&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;Acciones "/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.7/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Acciones/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new Acciones(&quot;"/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.7/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Acciones/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;);&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#x9;Efectos "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.7/%.5/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Efectos/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" = new Efectos(&quot;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.7/%.5/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Efectos/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&quot;, "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.7/%.5/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Efectos/valorModifica"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", "/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.7/%.5/b">
+                  <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Efectos/modifica"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Caracteristicas/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;&#x9;&#x9;&#x9;"/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.7/a">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Acciones/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".anhadirEfecto("/>
+            <body xsi:type="ocl.ecore:PropertyCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="b" referredVariable="/0/generateElement/%/%.7/%.5/b">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+              </source>
+              <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Efectos/nombre"/>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+            <loopVariable name="b">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+            </loopVariable>
+            <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Efectos)">
+              <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.7/a">
+                <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+              </source>
+              <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Acciones/causa"/>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;M.anhadirAccion("/>
+          <body xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="a" referredVariable="/0/generateElement/%/%.7/a">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Acciones/nombre"/>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;"/>
+          <loopVariable name="a">
+            <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+          </loopVariable>
+          <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/9/OrderedSet(Acciones)">
+            <source xsi:type="ocl.ecore:VariableExp" name="aMascota" referredVariable="/0/generateElement/aMascota">
+              <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+            </source>
+            <referredProperty xsi:type="ecore:EReference" href="http://POUEX/1.0#//Mascota/realizar"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#x9;M.igualarEstadosCaracteristicas();&#xA;&#xA;&#x9;&#x9;return M;&#xA;&#x9;}&#xA;&#xA;&#x9;public String getNombre() {&#xA;&#x9;&#x9;return nombre;&#xA;&#x9;}&#xA;&#xA;&#x9;public void setNombre(String nombre) {&#xA;&#x9;&#x9;this.nombre = nombre;&#xA;&#x9;}&#xA;&#xA;&#x9;public static ArrayList&lt;Acciones> getAcciones() {&#xA;&#x9;&#x9;return acciones;&#xA;&#x9;}&#xA;&#xA;&#x9;public static void setAcciones(ArrayList&lt;Acciones> acciones) {&#xA;&#x9;&#x9;Mascota.acciones = acciones;&#xA;&#x9;}&#xA;&#xA;&#x9;public static ArrayList&lt;Estados> getEstados() {&#xA;&#x9;&#x9;return estados;&#xA;&#x9;}&#xA;&#xA;&#x9;public static void setEstados(ArrayList&lt;Estados> estados) {&#xA;&#x9;&#x9;Mascota.estados = estados;&#xA;&#x9;}&#xA;&#xA;&#x9;public static ArrayList&lt;Caracteristicas> getCaracteristicas() {&#xA;&#x9;&#x9;return caracteristicas;&#xA;&#x9;}&#xA;&#xA;&#x9;public static void setCaracteristicas(&#xA;&#x9;&#x9;&#x9;ArrayList&lt;Caracteristicas> caracteristicas) {&#xA;&#x9;&#x9;Mascota.caracteristicas = caracteristicas;&#xA;&#x9;}&#xA;&#xA;&#x9;public void anhadirAccion(Acciones _A) {&#xA;&#x9;&#x9;acciones.add(_A);&#xA;&#x9;}&#xA;&#xA;&#x9;public void anhadirCaracteristica(Caracteristicas _C) {&#xA;&#x9;&#x9;caracteristicas.add(_C);&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;public void anhadirEstado(Estados _E) {&#xA;&#x9;&#x9;estados.add(_E);&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;public void igualarEstadosCaracteristicas() {&#xA;&#x9;&#x9;for (int i = 0; i &lt; caracteristicas.size(); i++) {&#xA;&#x9;&#x9;&#x9;caracteristicas.get(i).ejecutarTodasLasTransiciones();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;public void ejecutarInterfazGrafica(){&#xA;&#x9;&#x9;Interfaz I = new Interfaz(getNombre(), getAcciones(), getEstados(), getCaracteristicas());&#xA;&#x9;}&#xA;&#x9;&#xA;&#xA;&#x9;public static void main(String "/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" args) {&#xA;&#x9;&#x9;Mascota M = crearMascota();&#xA;&#x9;&#x9;M.ejecutarInterfazGrafica();&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Mascota.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;import java.util.ArrayList;&#xA;&#xA;/**clase acciones*/&#xA;public class Acciones {&#xA;&#x9;private String nombre;&#xA;&#x9;private ArrayList&lt;Efectos> efectos = new ArrayList&lt;Efectos>();&#xA;&#x9;&#xA;&#xA;&#x9;public Acciones(String _nombre){&#xA;&#x9;&#x9;nombre=_nombre;&#xA;&#x9;}&#xA;&#x9;&#xA;&#xA;&#x9;public void realizarAccion(){&#xA;&#x9;&#x9;System.out.println(&quot;"/>
+        <body xsi:type="ocl.ecore:PropertyCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:VariableExp" name="aMascota" referredVariable="/0/generateElement/aMascota">
+            <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+          </source>
+          <referredProperty xsi:type="ecore:EAttribute" href="http://POUEX/1.0#//Mascota/nombre"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" realiza la accion &quot;+nombre+&quot; y esto causa: &quot;);&#xA;&#x9;&#x9;for (int i = 0; i &lt; efectos.size(); i++) {&#xA;&#x9;&#x9;&#x9;efectos.get(i).realizarEfecto();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;public void anhadirEfecto(Efectos e) {&#xA;&#x9;&#x9;efectos.add(e);&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#xA;&#x9;public String getNombre() {&#xA;&#x9;&#x9;return nombre;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Acciones.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import java.io.Serializable;&#xA;import java.util.ArrayList;&#xA;&#xA;/**clase catacteristicas*/&#xA;public class Caracteristicas implements Serializable{&#xA;&#x9;&#xA;&#x9;private String nombre;&#xA;&#x9;private int valor;&#xA;&#x9;private int valoxMax;&#xA;&#x9;private boolean Beneficioso;&#xA;&#x9;private ArrayList&lt;Transiciones> transiciones = new ArrayList&lt;Transiciones>();&#xA;&#x9;&#xA;&#x9;public Caracteristicas(String _nombre, boolean _beneficioso, int _valor, int _max) {&#xA;&#x9;&#x9;nombre=_nombre;&#xA;&#x9;&#x9;valor=_valor;&#xA;&#x9;&#x9;valoxMax=_max;&#xA;&#x9;&#x9;Beneficioso=_beneficioso;&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;public String getNombre() {&#xA;&#x9;&#x9;return nombre;&#xA;&#x9;}&#xA;&#xA;&#x9;public void setNombre(String nombre) {&#xA;&#x9;&#x9;this.nombre = nombre;&#xA;&#x9;}&#xA;&#xA;&#x9;public int getValor() {&#xA;&#x9;&#x9;return valor;&#xA;&#x9;}&#xA;&#xA;&#x9;public void setValor(int valor) {&#xA;&#x9;&#x9;this.valor = valor;&#xA;&#x9;}&#xA;&#xA;&#x9;public int getValoxMax() {&#xA;&#x9;&#x9;return valoxMax;&#xA;&#x9;}&#xA;&#xA;&#x9;public void setValoxMax(int valoxMax) {&#xA;&#x9;&#x9;this.valoxMax = valoxMax;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;public void anhadirTransicion(Transiciones cambioSucio) {&#xA;&#x9;&#x9;transiciones.add(cambioSucio);&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#x9;public void mostrar() {&#xA;&#x9;&#x9;System.out.println(nombre+&quot;: &quot;+valor);&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * Este metodo sirve para poner todos los estados acorde a las caracteristicas&#xA;&#x9; */&#xA;&#x9;public void ejecutarTodasLasTransiciones() {&#xA;&#xA;&#x9;&#x9;for (int i = 0; i &lt; transiciones.size(); i++) {&#xA;&#x9;&#x9;&#x9;int valorCambio = transiciones.get(i).getValorCambio();&#xA;&#x9;&#x9;&#x9;boolean caract = Beneficioso;&#xA;&#x9;&#x9;&#x9;boolean estado = transiciones.get(i).getEstadoBeneficioso();&#xA;&#x9;&#x9;&#x9;boolean nuevoEstado = false;&#xA;&#x9;&#x9;&#x9;if (valor > valorCambio) {&#xA;&#x9;&#x9;&#x9;&#x9;if (caract &amp;&amp; estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = true;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (caract &amp;&amp; !estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (!caract &amp;&amp; estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (!caract &amp;&amp; !estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = true;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;if (caract &amp;&amp; estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (caract &amp;&amp; !estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = true;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (!caract &amp;&amp; estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = true;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (!caract &amp;&amp; !estado) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;nuevoEstado = false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;transiciones.get(i).forzarTransicion(nuevoEstado);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;public void comprobarTransiciones(int valorAnterior, int valorNuevo){&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;for (int i = 0; i &lt; transiciones.size(); i++) {&#xA;&#x9;&#x9;&#x9;int valorCambio = transiciones.get(i).getValorCambio();&#xA;&#x9;&#x9;&#x9;boolean caract = Beneficioso;&#xA;&#x9;&#x9;&#x9;boolean estado = transiciones.get(i).getEstadoBeneficioso();&#xA;&#x9;&#x9;&#x9;boolean nuevoEstado = false;&#xA;&#x9;&#x9;&#x9;if(hayTransicion(valorAnterior, valorNuevo, valorCambio)){&#xA;&#x9;&#x9;&#x9;&#x9;if(valorNuevo>valorCambio){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(caract &amp;&amp; estado) nuevoEstado=true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(caract &amp;&amp; !estado)nuevoEstado=false;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(!caract &amp;&amp; estado)nuevoEstado=false;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(!caract &amp;&amp; !estado)nuevoEstado=true;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;else{&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(caract &amp;&amp; estado)nuevoEstado=false;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(caract &amp;&amp; !estado)nuevoEstado=true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(!caract &amp;&amp; estado)nuevoEstado=true;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(!caract &amp;&amp; !estado)nuevoEstado=false;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;transiciones.get(i).causarTransicion(nuevoEstado);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#xA;&#x9;private boolean hayTransicion(int anterior, int nuevo, int cambio) {&#xA;&#x9;&#x9;boolean hay = false;&#xA;&#x9;&#x9;if(anterior> cambio &amp;&amp; nuevo==cambio)hay=true;&#xA;&#x9;&#x9;if(anterior&lt;=cambio &amp;&amp; nuevo> cambio)hay=true;&#xA;&#x9;&#x9;/*&#xA;&#x9;&#x9;//Explicacion:&#xA;&#x9;&#x9;if(anterior>cambio){&#xA;&#x9;&#x9;&#x9;if(nuevo==cambio)hay=true;&#xA;&#x9;&#x9;&#x9;if(nuevo>cambio)hay=false;&#xA;&#x9;&#x9;&#x9;if(nuevo&lt;cambio)hay=false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;if(anterior&lt;cambio){&#xA;&#x9;&#x9;&#x9;if(nuevo==cambio)hay=false;&#xA;&#x9;&#x9;&#x9;if(nuevo>cambio)hay=true;&#xA;&#x9;&#x9;&#x9;if(nuevo&lt;cambio)hay=false;&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;if(anterior==cambio){&#xA;&#x9;&#x9;&#x9;if(nuevo==cambio)hay=false;&#xA;&#x9;&#x9;&#x9;if(nuevo>cambio)hay=true;&#xA;&#x9;&#x9;&#x9;if(nuevo&lt;cambio)hay=false;&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;*/&#xA;&#x9;&#x9;return hay;&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Caracteristicas.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public class Criticos extends Estados {&#xA;&#x9;public Criticos(String _nombre, boolean _beneficioso, boolean _estado) {&#xA;&#x9;&#x9;super(_nombre, _beneficioso, _estado);&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Criticos.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public class Efectos{&#xA;&#x9;private String nombre;&#xA;&#x9;private int valorModifica;&#xA;&#x9;private Caracteristicas caracteristicaModificada;&#xA;&#xA;&#x9;public Efectos(String _nombre, int _valor, Caracteristicas _caracteristicas) {&#xA;&#x9;&#x9;nombre=_nombre;&#xA;&#x9;&#x9;valorModifica=_valor;&#xA;&#x9;&#x9;caracteristicaModificada=_caracteristicas;&#xA;&#x9;}&#xA;&#x9;&#xA;&#xA;&#x9;public void realizarEfecto() {&#xA;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;int valorAnterior = caracteristicaModificada.getValor();&#xA;&#x9;&#x9;int valorMax = caracteristicaModificada.getValoxMax();&#xA;&#x9;&#x9;int valorNuevo = valorAnterior+valorModifica;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;if(valorNuevo > valorMax)valorNuevo=valorMax;&#xA;&#x9;&#x9;if(valorNuevo &lt; 0)valorNuevo=0;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;caracteristicaModificada.setValor(valorNuevo);&#xA;&#x9;&#x9;System.out.println(caracteristicaModificada.getNombre()+&quot; modificada de &quot;+valorAnterior+ &quot; a &quot;+valorNuevo);&#xA;&#x9;&#x9;caracteristicaModificada.comprobarTransiciones(valorAnterior, valorNuevo);&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Efectos.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public class Emocionales extends Caracteristicas {&#xA;&#xA;&#x9;public Emocionales(String _nombre, boolean _beneficioso, int _valor, int _max) {&#xA;&#x9;&#x9;super(_nombre, _beneficioso, _valor, _max);&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Emocionales.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import java.io.Serializable;&#xA;&#xA;public class Estados implements Serializable{&#xA;&#xA;&#x9;private String nombre;&#xA;&#x9;private boolean estado;&#xA;&#x9;private boolean beneficioso;&#xA;&#x9;&#xA;&#x9;public Estados(String _nombre, boolean _beneficioso, boolean _estado) {&#xA;&#x9;&#x9;beneficioso=_beneficioso;&#xA;&#x9;&#x9;nombre=_nombre;&#xA;&#x9;&#x9;estado=_estado;&#xA;&#x9;}&#xA;&#x9;public String getNombre() {&#xA;&#x9;&#x9;return nombre;&#xA;&#x9;}&#xA;&#x9;public void setNombre(String nombre) {&#xA;&#x9;&#x9;this.nombre = nombre;&#xA;&#x9;}&#xA;&#x9;public boolean getEstado() {&#xA;&#x9;&#x9;return estado;&#xA;&#x9;}&#xA;&#x9;public void setEstado(boolean estado) {&#xA;&#x9;&#x9;this.estado = estado;&#xA;&#x9;}&#xA;&#x9;public boolean getBeneficioso() {&#xA;&#x9;&#x9;return beneficioso;&#xA;&#x9;}&#xA;&#x9;public void setBeneficioso(boolean beneficioso) {&#xA;&#x9;&#x9;this.beneficioso = beneficioso;&#xA;&#x9;}&#xA;&#x9;public void mostrar() {&#xA;&#x9;&#x9;if(estado) System.out.println(&quot;Esta &quot;+nombre+&quot;.&quot;);&#xA;&#x9;&#x9;else System.out.println(&quot;No esta &quot;+nombre+&quot;.&quot;);&#xA;&#x9;}&#xA;&#x9;public void activar() {&#xA;&#x9;&#x9;estado = true;&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#x9;public void desactivar() {&#xA;&#x9;&#x9;estado = false;&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Estados.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public class Fisicas extends Caracteristicas {&#xA;&#xA;&#x9;public Fisicas(String _nombre, boolean _beneficioso, int _valor, int _max) {&#xA;&#x9;&#x9;super(_nombre, _beneficioso, _valor, _max);&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Fisicas.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="public class Normales extends Estados{&#xA;&#xA;&#x9;public Normales(String _nombre, boolean _beneficioso, boolean _estado) {&#xA;&#x9;&#x9;super(_nombre, _beneficioso, _estado);&#xA;&#x9;}&#xA;&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Normales.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import java.io.Serializable;&#xA;&#xA;public class Transiciones implements Serializable{&#xA;&#xA;&#xA;&#x9;private String nombre;&#xA;&#x9;/** El valor de cambio es el valor a partir del cual cambiaria&#xA;&#x9; * es decir, si el valor del cambio es 10, de 0 a 10 seria un estado&#xA;&#x9; * y de 11 en adelante otro*/&#xA;&#x9;private int valorCambio;&#xA;&#x9;private Estados estadoModificado;&#xA;&#x9;&#xA;&#x9;public String getNombre() {&#xA;&#x9;&#x9;return nombre;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;public void setNombre(String nombre) {&#xA;&#x9;&#x9;this.nombre = nombre;&#xA;&#x9;}&#xA;&#xA;&#x9;/** El valor de cambio es el valor a partir del cual cambiaria&#xA;&#x9; * es decir, si el valor del cambio es 10, de 0 a 10 seria un estado&#xA;&#x9; * y de 11 en adelante otro*/&#xA;&#x9;public int getValorCambio() {&#xA;&#x9;&#x9;return valorCambio;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;public void setValorCambio(int valorCambio) {&#xA;&#x9;&#x9;this.valorCambio = valorCambio;&#xA;&#x9;}&#xA;&#xA;&#x9;public Transiciones(String _nombre, int _valor, Estados _estado) {&#xA;&#x9;&#x9;nombre=_nombre;&#xA;&#x9;&#x9;valorCambio=_valor;&#xA;&#x9;&#x9;estadoModificado=_estado;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;public void forzarTransicion(boolean b){&#xA;&#x9;&#x9;if(b) estadoModificado.activar();&#xA;&#x9;&#x9;else estadoModificado.desactivar();&#xA;&#x9;}&#xA;&#x9;public void causarTransicion(boolean b) {&#xA;&#x9;&#x9;if(b){&#xA;&#x9;&#x9;&#x9;estadoModificado.activar();&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;La mascota ahora esta &quot;+estadoModificado.getNombre());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;else{&#xA;&#x9;&#x9;&#x9;estadoModificado.desactivar();&#xA;&#x9;&#x9;&#x9;System.out.println(&quot;La mascota ya no esta &quot;+estadoModificado.getNombre());&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;public boolean getEstadoBeneficioso() {&#xA;&#x9;&#x9;return estadoModificado.getBeneficioso();&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Transiciones.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import java.awt.event.ActionEvent;&#xA;import java.awt.event.ActionListener;&#xA;import java.util.ArrayList;&#xA;&#xA;import javax.swing.JButton;&#xA;&#xA;public class Boton_Accion extends JButton implements ActionListener {&#xA;&#x9;Acciones A;&#xA;&#xA;&#x9;public Boton_Accion(Acciones _A) {&#xA;&#x9;&#x9;super(_A.getNombre());&#xA;&#x9;&#x9;A = _A;&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;A.realizarAccion();&#xA;&#x9;}&#xA;&#xA;&#x9;public void accionar() {&#xA;&#x9;&#x9;A.realizarAccion();&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Boton_Accion.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import java.awt.*;&#xA;import java.awt.event.ActionEvent;&#xA;import java.awt.event.ActionListener;&#xA;import java.awt.font.TextAttribute;&#xA;import java.io.FileInputStream;&#xA;import java.io.FileNotFoundException;&#xA;import java.io.FileOutputStream;&#xA;import java.io.IOException;&#xA;import java.io.ObjectInputStream;&#xA;import java.io.ObjectOutputStream;&#xA;import java.util.ArrayList;&#xA;import java.util.Map;&#xA;import java.util.concurrent.Executors;&#xA;import java.util.concurrent.ScheduledExecutorService;&#xA;import java.util.concurrent.TimeUnit;&#xA;&#xA;import javax.swing.*;&#xA;&#xA;public class Interfaz extends JFrame implements ActionListener {&#xA;&#xA;&#x9;private JPanel PanelAccion;&#xA;&#x9;private JPanel PanelEstados;&#xA;&#x9;private JPanel PanelFoto;&#xA;&#x9;private JPanel PanelConsola;&#xA;&#x9;private ArrayList&lt;Acciones> acciones;&#xA;&#x9;private static ArrayList&lt;Estados> estados;&#xA;&#x9;private static ArrayList&lt;Caracteristicas> caracteristicas;&#xA;&#x9;private ScheduledExecutorService hiloTiempo;&#xA;&#x9;private String gameOver;&#xA;&#x9;public Interfaz(String _nombre, ArrayList&lt;Acciones> _acciones,&#xA;&#x9;&#x9;&#x9;ArrayList&lt;Estados> _estados,&#xA;&#x9;&#x9;&#x9;ArrayList&lt;Caracteristicas> _caracteristicas) {&#xA;&#xA;&#x9;&#x9;acciones = _acciones;&#xA;&#x9;&#x9;estados = _estados;&#xA;&#x9;&#x9;caracteristicas = _caracteristicas;&#xA;&#x9;&#x9;setTitle(&quot;POUEx &quot; + _nombre); // Titulo de la ventana&#xA;&#x9;&#x9;setBounds(0, 0, 750, 750); // Tamanho de la ventana&#xA;&#x9;&#x9;setVisible(true); // Hacemos que la ventana sea visible&#xA;&#x9;&#x9;this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Al cerrar la ventana se cierra el programa&#xA;&#xA;&#x9;&#x9;Container contenedor = getContentPane(); // Inicializacion del panel de contenido&#xA;&#xA;&#x9;&#x9;PanelFoto = new JPanel();&#xA;&#x9;&#x9;PanelConsola = new JPanel();&#xA;&#x9;&#x9;PanelAccion = new JPanel();&#xA;&#x9;&#x9;PanelEstados = new JPanel();&#xA;&#xA;&#x9;&#x9;contenedor.add(PanelFoto, BorderLayout.NORTH);&#xA;&#x9;&#x9;contenedor.add(PanelConsola, BorderLayout.SOUTH);&#xA;&#x9;&#x9;contenedor.add(PanelAccion, BorderLayout.CENTER);&#xA;&#x9;&#x9;contenedor.add(PanelEstados, BorderLayout.WEST);&#xA;&#xA;&#x9;&#x9;inicializarPanelFoto();&#xA;&#x9;&#x9;inicializarPanelConsola();&#xA;&#x9;&#x9;inicializarPanelAccion();&#xA;&#x9;&#x9;inicializarPanelEstados();&#xA;&#x9;&#x9;paintComponents(getGraphics());&#xA;&#x9;}&#xA;&#xA;&#x9;private void inicializarPanelFoto() {&#xA;&#x9;&#x9;JPanel panelImagen = new JPanel();&#xA;&#x9;&#x9;panelImagen.setBounds(0, 0, 200, 200);&#xA;&#x9;&#x9;JLabel imagen = new JLabel(new ImageIcon(&quot;pictures/POUX.gif&quot;));&#xA;&#x9;&#x9;panelImagen.add(imagen);&#xA;&#x9;&#x9;PanelFoto.add(panelImagen);&#xA;&#x9;}&#xA;&#xA;&#x9;private void inicializarPanelConsola() {&#xA;&#x9;&#x9;// JLabel consola = new JLabel(&quot;Consola&quot;);&#xA;&#x9;&#x9;// PanelConsola.add(consola);&#xA;&#x9;}&#xA;&#xA;&#x9;private void inicializarPanelAccion() {&#xA;&#x9;&#x9;// Separamos el panel izquierdo en 3&#xA;&#x9;&#x9;int numCeldas;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;/** numCeldasSinAcciones */&#xA;&#x9;&#x9;int n = 4;&#xA;&#x9;&#x9;numCeldas = acciones.size() + n;&#xA;&#x9;&#x9;PanelAccion.setLayout(new GridLayout(numCeldas, 1));&#xA;&#xA;&#x9;&#x9;JLabel Acciones = new JLabel(&quot;Acciones&quot;);&#xA;&#x9;&#x9;Font fuente = new Font(&quot;Arial&quot;, Font.BOLD, 20);&#xA;&#x9;&#x9;Map atributos = fuente.getAttributes();&#xA;&#x9;&#x9;atributos.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);&#xA;&#x9;&#x9;Acciones.setFont(fuente.deriveFont(atributos));&#xA;&#x9;&#x9;Acciones.setHorizontalAlignment(SwingConstants.CENTER);// Esto pone el texto centrado&#xA;&#x9;&#x9;PanelAccion.add(Acciones);&#xA;&#xA;&#x9;&#x9;for (int i = 0; i &lt; numCeldas - n; i++) {&#xA;&#x9;&#x9;&#x9;// Aqui comprobamos que la nueva accion no es tiempo, de ser asi&#xA;&#x9;&#x9;&#x9;// creamos la accion especial tiempo.&#xA;&#x9;&#x9;&#x9;if (acciones.get(i).getNombre() != &quot;Tiempo&quot; &amp;&amp; acciones.get(i).getNombre() != &quot;tiempo&quot;) {&#xA;&#x9;&#x9;&#x9;&#x9;Boton_Accion _Acciones = new Boton_Accion(acciones.get(i));&#xA;&#x9;&#x9;&#x9;&#x9;_Acciones.addActionListener(this);&#xA;&#x9;&#x9;&#x9;&#x9;PanelAccion.add(_Acciones);&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;crearAccionTiempo(acciones.get(i));&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;inicializarPanelGuardado(PanelAccion);&#xA;&#x9;}&#xA;&#x9;@SuppressWarnings(&quot;unchecked&quot;)&#xA;&#x9;private void inicializarPanelGuardado(JPanel PanelGuardado){&#xA;&#x9;&#x9;//Escribir guardado&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;JLabel GuardarPartida = new JLabel(&quot;Guardar partida: &quot;);&#xA;&#x9;&#x9;&#x9;Font fuente = new Font(&quot;Arial&quot;, Font.BOLD, 20);&#xA;&#x9;&#x9;&#x9;Map atributos = fuente.getAttributes();&#xA;&#x9;&#x9;&#x9;atributos.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);&#xA;&#x9;&#x9;&#x9;GuardarPartida.setFont(fuente.deriveFont(atributos));&#xA;&#x9;&#x9;&#x9;GuardarPartida.setHorizontalAlignment(SwingConstants.CENTER);// Esto pone el texto centrado&#xA;&#x9;&#x9;PanelGuardado.add(GuardarPartida);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//Boton de Save&#xA;&#x9;&#x9;@SuppressWarnings(&quot;serial&quot;)&#xA;&#x9;&#x9;class Boton_Save extends JButton implements ActionListener {&#xA;&#xA;&#x9;&#x9;&#x9;public Boton_Save(String nombre) {&#xA;&#x9;&#x9;&#x9;&#x9;super(nombre);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;@Override&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;ObjectOutputStream archivo = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;archivo = new ObjectOutputStream(new FileOutputStream(&quot;saves/pouex.save&quot;));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;archivo.writeObject(estados);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (IOException e1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e1.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;archivo.writeObject(caracteristicas);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (IOException e1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e1.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;archivo.close();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (IOException e1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e1.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Archivo creado con exito.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;} catch (FileNotFoundException e1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;No se ha encontrado el directorio para guardar el archivo.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Por favor, cree la carpeta ''saves'' en el directorio del juego.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;} catch (IOException e1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;e1.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;Boton_Save Save = new Boton_Save(&quot;Guardar&quot;);&#xA;&#x9;&#x9;Save.addActionListener(Save);&#xA;&#x9;&#x9;PanelAccion.add(Save);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;//Boton de Load&#xA;&#x9;&#x9;@SuppressWarnings(&quot;serial&quot;)&#xA;&#x9;&#x9;class Boton_Load extends JButton implements ActionListener {&#xA;&#xA;&#x9;&#x9;&#x9;public Boton_Load(String nombre) {&#xA;&#x9;&#x9;&#x9;&#x9;super(nombre);&#xA;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;@Override&#xA;&#x9;&#x9;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;ArrayList&lt;Estados> auxE = null;&#xA;&#x9;&#x9;&#x9;&#x9;ArrayList&lt;Caracteristicas> auxC = null;&#xA;&#x9;&#x9;&#x9;&#x9;ObjectInputStream ficharoLectura = null;&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;ficharoLectura = new ObjectInputStream(new FileInputStream(&quot;saves/pouex.save&quot;));&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;auxE = (ArrayList&lt;Estados>) ficharoLectura.readObject();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (ClassNotFoundException e3) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e3.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (IOException e3) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e3.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;auxC = (ArrayList&lt;Caracteristicas>) ficharoLectura.readObject();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (ClassNotFoundException e2) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e2.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (IOException e2) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e2.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ficharoLectura.close();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;} catch (IOException e1) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;e1.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;if(auxE != null &amp;&amp; auxC != null){&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ponerEstadosYCaracteristicas(auxE, auxC);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;Archivo cargado con exito.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;}else System.out.println(&quot;Error al cargar el fichero&quot;);&#xA;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;mostrarCambiosEstados();&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;} catch (FileNotFoundException e4) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;System.out.println(&quot;No se ha encontrado el archivo de guardado.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;} catch (IOException e4) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;e4.printStackTrace();&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;Boton_Load Load = new Boton_Load(&quot;Cargar&quot;);&#xA;&#x9;&#x9;Load.addActionListener(Load);&#xA;&#x9;&#x9;PanelAccion.add(Load);&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#x9;private void ponerEstadosYCaracteristicas(ArrayList&lt;Estados> _E, ArrayList&lt;Caracteristicas> _C){&#xA;&#x9;&#x9;for (int i = 0; i &lt; _E.size(); i++) {&#xA;&#x9;&#x9;&#x9;boolean estado = _E.get(i).getEstado();&#xA;&#x9;&#x9;&#x9;estados.get(i).setEstado(estado);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;for (int i = 0; i &lt; _C.size(); i++) {&#xA;&#x9;&#x9;&#x9;int valor = _C.get(i).getValor();&#xA;&#x9;&#x9;&#x9;caracteristicas.get(i).setValor(valor);&#xA;&#x9;&#x9;}&#x9;&#x9;&#xA;&#x9;}&#xA;&#x9;&#xA;&#xA;&#x9;@SuppressWarnings(&quot;unchecked&quot;)&#xA;&#x9;private void inicializarPanelEstados() {&#xA;&#x9;&#x9;int numCeldas;&#xA;&#x9;&#x9;int numEstados;&#xA;&#x9;&#x9;int numCaract;&#xA;&#x9;&#x9;numEstados = estados.size();&#xA;&#x9;&#x9;numCaract = caracteristicas.size();&#xA;&#x9;&#x9;numCeldas = numCaract + numEstados + 2;&#xA;&#xA;&#x9;&#x9;PanelEstados.setLayout(new GridLayout(numCeldas, 1));&#xA;&#xA;&#x9;&#x9;JLabel Estados = new JLabel(&quot;Estados: &quot;); // Texto estado subrayado y en negrita&#xA;&#x9;&#x9;Font fuente = new Font(&quot;Arial&quot;, Font.BOLD, 20);&#xA;&#x9;&#x9;Map atributos = fuente.getAttributes();&#xA;&#x9;&#x9;atributos.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);&#xA;&#x9;&#x9;Estados.setFont(fuente.deriveFont(atributos));&#xA;&#xA;&#x9;&#x9;PanelEstados.add(Estados);&#xA;&#x9;&#x9;for (int i = 0; i &lt; numEstados; i++) {&#xA;&#x9;&#x9;&#x9;JLabel _Estados;&#xA;&#x9;&#x9;&#x9;if (estados.get(i).getEstado()) {&#xA;&#x9;&#x9;&#x9;&#x9;_Estados = new JLabel(&quot;        &quot; + &quot;Esta &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;+ estados.get(i).getNombre() + &quot;        &quot;);&#xA;&#x9;&#x9;&#x9;} else {&#xA;&#x9;&#x9;&#x9;&#x9;_Estados = new JLabel(&quot;        &quot; + &quot;No esta &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;+ estados.get(i).getNombre() + &quot;        &quot;);&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;PanelEstados.add(_Estados);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;&#x9;JLabel Caract = new JLabel(&quot;Caracteristicas: &quot;);&#xA;&#x9;&#x9;Caract.setFont(fuente.deriveFont(atributos));&#xA;&#xA;&#x9;&#x9;PanelEstados.add(Caract);&#xA;&#x9;&#x9;for (int i = 0; i &lt; numCaract; i++) {&#xA;&#x9;&#x9;&#x9;JLabel _Caract = new JLabel(&quot;        &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ caracteristicas.get(i).getNombre() + &quot;: &quot;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;+ caracteristicas.get(i).getValor());&#xA;&#x9;&#x9;&#x9;PanelEstados.add(_Caract);&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;&#xA;&#x9;private void crearAccionTiempo(Acciones _ATiempo) {&#xA;&#x9;&#x9;final Acciones ATiempo = _ATiempo;&#xA;&#x9;&#x9;Runnable helloRunnable = new Runnable() {&#xA;&#x9;&#x9;&#x9;public void run() {&#xA;&#x9;&#x9;&#x9;&#x9;ATiempo.realizarAccion();&#xA;&#x9;&#x9;&#x9;&#x9;mostrarCambiosEstados();&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;};&#xA;&#xA;&#x9;&#x9;hiloTiempo = Executors.newScheduledThreadPool(1);&#xA;&#x9;&#x9;hiloTiempo.scheduleAtFixedRate(helloRunnable, 15, 15, TimeUnit.SECONDS);//TODO cambiar el tiempo&#xA;&#x9;&#x9;;&#xA;&#x9;}&#xA;&#xA;&#xA;&#x9;private void mostrarCambiosEstados() {&#xA;&#x9;&#x9;PanelEstados.removeAll();&#xA;&#x9;&#x9;inicializarPanelEstados();&#xA;&#x9;&#x9;paintComponents(getGraphics());&#xA;&#xA;&#x9;&#x9;String causa = hayEstadoCritico();&#xA;&#x9;&#x9;if (causa != null) {&#xA;&#x9;&#x9;&#x9;InterfazMuerte X = new InterfazMuerte(causa);&#xA;&#x9;&#x9;&#x9;mostrarMascota();&#xA;&#x9;&#x9;&#x9;this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Al cerrar la  ventana NO se cierra el programa&#xA;&#x9;&#x9;&#x9;this.hide();&#xA;&#x9;&#x9;&#x9;this.hiloTiempo.shutdown();&#xA;&#x9;&#x9;}&#xA;&#xA;&#x9;}&#xA;&#x9;private void mostrarMascota() {&#xA;&#x9;&#x9;System.out.println(&quot;Caracteristicas: &quot;);&#xA;&#x9;&#x9;for (int i = 0; i &lt; caracteristicas.size(); i++) {&#xA;&#x9;&#x9;&#x9;System.out.print(&quot;    &quot;);&#xA;&#x9;&#x9;&#x9;caracteristicas.get(i).mostrar();&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;System.out.println(&quot;Estados: &quot;);&#xA;&#x9;&#x9;for (int i = 0; i &lt; estados.size(); i++) {&#xA;&#x9;&#x9;&#x9;System.out.print(&quot;    &quot;);&#xA;&#x9;&#x9;&#x9;estados.get(i).mostrar();&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;private static String hayEstadoCritico() {&#xA;&#x9;&#x9;for (int i = 0; i &lt; estados.size(); i++) {&#xA;&#x9;&#x9;&#x9;if (estados.get(i) instanceof Criticos) {&#xA;&#x9;&#x9;&#x9;&#x9;boolean activo = estados.get(i).getEstado();&#xA;&#x9;&#x9;&#x9;&#x9;boolean beneficioso = estados.get(i).getBeneficioso();&#xA;&#x9;&#x9;&#x9;&#x9;String nombre = estados.get(i).getNombre();&#xA;&#x9;&#x9;&#x9;&#x9;if (!activo &amp;&amp; beneficioso) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return &quot;no esta &quot; + nombre;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;&#x9;if (activo &amp;&amp; !beneficioso) {&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;return &quot;esta &quot; + nombre;&#xA;&#x9;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;&#x9;}&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;return null;&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public void actionPerformed(ActionEvent evento) {&#xA;&#x9;&#x9;Boton_Accion aux = (Boton_Accion) evento.getSource();&#xA;&#x9;&#x9;aux.accionar();&#xA;&#x9;&#x9;mostrarCambiosEstados();&#xA;&#xA;&#x9;}&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="Interfaz.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="import java.awt.Container;&#xA;import java.awt.GridLayout;&#xA;import java.awt.event.ActionEvent;&#xA;import java.awt.event.ActionListener;&#xA;&#xA;import javax.swing.ImageIcon;&#xA;import javax.swing.JButton;&#xA;import javax.swing.JFrame;&#xA;import javax.swing.JLabel;&#xA;import javax.swing.JPanel;&#xA;import javax.swing.SwingConstants;&#xA;&#xA;public class InterfazMuerte extends JFrame implements ActionListener{&#xA;&#xA;&#x9;public InterfazMuerte(String causa) {&#xA;&#x9;&#x9;setTitle(&quot;Fin del juego&quot;); // Titulo de la ventana&#xA;&#x9;&#x9;setBounds(0, 0, 400, 400); // Tamanho de la ventana&#xA;&#x9;&#x9;setVisible(true); // Hacemos que la ventana sea visible&#xA;        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Al cerrar la ventana se cierra el programa&#xA;&#xA;&#x9;&#x9;Container contenedor = getContentPane();&#xA;&#x9;&#x9;contenedor.setLayout(new GridLayout(2, 1));&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;JPanel PanelFoto = new JPanel();&#xA;&#x9;&#x9;&#x9;JPanel panelImagen = new JPanel();&#xA;&#x9;&#x9;&#x9;panelImagen.setBounds(0, 0, 200, 200);&#xA;&#x9;&#x9;&#x9;&#x9;JLabel imagen = new JLabel(new ImageIcon(&quot;pictures/POUX_Death.jpg&quot;));&#xA;&#x9;&#x9;&#x9;&#x9;panelImagen.add(imagen);&#xA;&#x9;&#x9;&#x9;PanelFoto.add(panelImagen);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;JPanel PanelTextoYBoton = new JPanel();&#xA;&#x9;&#x9;PanelTextoYBoton.setLayout(new GridLayout(3, 1));&#xA;&#x9;&#x9;&#x9;JLabel texto = new JLabel(&quot;Tu mascota &quot;+causa+&quot; :(&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;texto.setHorizontalAlignment(SwingConstants.CENTER);&#xA;&#x9;&#x9;&#x9;JLabel texto2 = new JLabel(&quot;--GAME OVER--&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;texto2.setHorizontalAlignment(SwingConstants.CENTER);&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;JButton X = new JButton(&quot;Cerrar el Juego.&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;X.addActionListener(this);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;PanelTextoYBoton.add(texto);&#xA;&#x9;&#x9;&#x9;&#x9;PanelTextoYBoton.add(texto2);&#xA;&#x9;&#x9;&#x9;&#x9;PanelTextoYBoton.add(X);&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;contenedor.add(panelImagen);&#xA;&#x9;&#x9;contenedor.add(PanelTextoYBoton);&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;&#xA;&#x9;}&#xA;&#xA;&#x9;@Override&#xA;&#x9;public void actionPerformed(ActionEvent e) {&#xA;&#x9;&#x9;System.exit(0); &#xA;&#x9;}&#xA;&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="InterfazMuerte.java">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aMascota">
+        <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateElement">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateElement"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aMascota">
+          <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Mascota_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://POUEX/1.0#//Mascota"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Estados)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Caracteristicas)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Transiciones)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Acciones)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:OrderedSetType" name="OrderedSet(Efectos)" instanceClassName="java.util.LinkedHashSet">
+      <elementType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Estados"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Transiciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Caracteristicas"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Efectos"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Acciones"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://POUEX/1.0#//Mascota"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateElement">
+      <details key="start" value="69"/>
+      <details key="end" value="23902"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateElement/%">
+      <details key="start" value="140"/>
+      <details key="end" value="3118"/>
+      <details key="line" value="7"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateElement/%/%">
+      <details key="start" value="180"/>
+      <details key="end" value="711"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateElement/%/%.1">
+      <details key="start" value="712"/>
+      <details key="end" value="727"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateElement/%/%.1/aMascota">
+      <details key="start" value="712"/>
+      <details key="end" value="720"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateElement/%/%.2">
+      <details key="start" value="729"/>
+      <details key="end" value="759"/>
+      <details key="line" value="24"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateElement/%/%.3">
+      <details key="start" value="761"/>
+      <details key="end" value="932"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateElement/%/%.3/%">
+      <details key="start" value="798"/>
+      <details key="end" value="808"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateElement/%/%.3/%.1">
+      <details key="start" value="809"/>
+      <details key="end" value="817"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateElement/%/%.3/%.1/a">
+      <details key="start" value="809"/>
+      <details key="end" value="810"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateElement/%/%.3/%.2">
+      <details key="start" value="819"/>
+      <details key="end" value="826"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateElement/%/%.3/%.3">
+      <details key="start" value="827"/>
+      <details key="end" value="842"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateElement/%/%.3/%.3/%">
+      <details key="start" value="827"/>
+      <details key="end" value="837"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateElement/%/%.3/%.3/%/a">
+      <details key="start" value="827"/>
+      <details key="end" value="828"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateElement/%/%.3/%.4">
+      <details key="start" value="844"/>
+      <details key="end" value="846"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateElement/%/%.3/%.5">
+      <details key="start" value="847"/>
+      <details key="end" value="855"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateElement/%/%.3/%.5/a">
+      <details key="start" value="847"/>
+      <details key="end" value="848"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateElement/%/%.3/%.6">
+      <details key="start" value="857"/>
+      <details key="end" value="860"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateElement/%/%.3/%.7">
+      <details key="start" value="861"/>
+      <details key="end" value="874"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateElement/%/%.3/%.7/a">
+      <details key="start" value="861"/>
+      <details key="end" value="862"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateElement/%/%.3/%.8">
+      <details key="start" value="876"/>
+      <details key="end" value="878"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateElement/%/%.3/%.9">
+      <details key="start" value="879"/>
+      <details key="end" value="887"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateElement/%/%.3/%.9/a">
+      <details key="start" value="879"/>
+      <details key="end" value="880"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateElement/%/%.3/%.10">
+      <details key="start" value="889"/>
+      <details key="end" value="910"/>
+      <details key="line" value="28"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateElement/%/%.3/%.11">
+      <details key="start" value="911"/>
+      <details key="end" value="919"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateElement/%/%.3/%.11/a">
+      <details key="start" value="911"/>
+      <details key="end" value="912"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateElement/%/%.3/%.12">
+      <details key="start" value="921"/>
+      <details key="end" value="924"/>
+      <details key="line" value="29"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateElement/%/%.3/a">
+      <details key="start" value="767"/>
+      <details key="end" value="778"/>
+      <details key="line" value="27"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateElement/%/%.3/%.13">
+      <details key="start" value="781"/>
+      <details key="end" value="795"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateElement/%/%.3/%.13/aMascota">
+      <details key="start" value="781"/>
+      <details key="end" value="789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateElement/%/%.4">
+      <details key="start" value="933"/>
+      <details key="end" value="967"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateElement/%/%.5">
+      <details key="start" value="969"/>
+      <details key="end" value="1380"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateElement/%/%.5/%">
+      <details key="start" value="1015"/>
+      <details key="end" value="1033"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateElement/%/%.5/%.1">
+      <details key="start" value="1034"/>
+      <details key="end" value="1042"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateElement/%/%.5/%.1/a">
+      <details key="start" value="1034"/>
+      <details key="end" value="1035"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateElement/%/%.5/%.2">
+      <details key="start" value="1044"/>
+      <details key="end" value="1051"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateElement/%/%.5/%.3">
+      <details key="start" value="1052"/>
+      <details key="end" value="1067"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateElement/%/%.5/%.3/%">
+      <details key="start" value="1052"/>
+      <details key="end" value="1062"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateElement/%/%.5/%.3/%/a">
+      <details key="start" value="1052"/>
+      <details key="end" value="1053"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateElement/%/%.5/%.4">
+      <details key="start" value="1069"/>
+      <details key="end" value="1071"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateElement/%/%.5/%.5">
+      <details key="start" value="1072"/>
+      <details key="end" value="1080"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateElement/%/%.5/%.5/a">
+      <details key="start" value="1072"/>
+      <details key="end" value="1073"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateElement/%/%.5/%.6">
+      <details key="start" value="1082"/>
+      <details key="end" value="1085"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateElement/%/%.5/%.7">
+      <details key="start" value="1086"/>
+      <details key="end" value="1099"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateElement/%/%.5/%.7/a">
+      <details key="start" value="1086"/>
+      <details key="end" value="1087"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateElement/%/%.5/%.8">
+      <details key="start" value="1101"/>
+      <details key="end" value="1103"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateElement/%/%.5/%.9">
+      <details key="start" value="1104"/>
+      <details key="end" value="1111"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateElement/%/%.5/%.9/a">
+      <details key="start" value="1104"/>
+      <details key="end" value="1105"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateElement/%/%.5/%.10">
+      <details key="start" value="1113"/>
+      <details key="end" value="1115"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateElement/%/%.5/%.11">
+      <details key="start" value="1116"/>
+      <details key="end" value="1126"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateElement/%/%.5/%.11/a">
+      <details key="start" value="1116"/>
+      <details key="end" value="1117"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateElement/%/%.5/%.12">
+      <details key="start" value="1128"/>
+      <details key="end" value="1131"/>
+      <details key="line" value="34"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateElement/%/%.5/%.13">
+      <details key="start" value="1134"/>
+      <details key="end" value="1330"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateElement/%/%.5/%.13/%">
+      <details key="start" value="1170"/>
+      <details key="end" value="1186"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateElement/%/%.5/%.13/%.1">
+      <details key="start" value="1187"/>
+      <details key="end" value="1195"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateElement/%/%.5/%.13/%.1/b">
+      <details key="start" value="1187"/>
+      <details key="end" value="1188"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateElement/%/%.5/%.13/%.2">
+      <details key="start" value="1197"/>
+      <details key="end" value="1218"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateElement/%/%.5/%.13/%.3">
+      <details key="start" value="1219"/>
+      <details key="end" value="1227"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateElement/%/%.5/%.13/%.3/b">
+      <details key="start" value="1219"/>
+      <details key="end" value="1220"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateElement/%/%.5/%.13/%.4">
+      <details key="start" value="1229"/>
+      <details key="end" value="1232"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateElement/%/%.5/%.13/%.5">
+      <details key="start" value="1233"/>
+      <details key="end" value="1246"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateElement/%/%.5/%.13/%.5/b">
+      <details key="start" value="1233"/>
+      <details key="end" value="1234"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateElement/%/%.5/%.13/%.6">
+      <details key="start" value="1248"/>
+      <details key="end" value="1250"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateElement/%/%.5/%.13/%.7">
+      <details key="start" value="1251"/>
+      <details key="end" value="1269"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateElement/%/%.5/%.13/%.7/%">
+      <details key="start" value="1251"/>
+      <details key="end" value="1262"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateElement/%/%.5/%.13/%.7/%/b">
+      <details key="start" value="1251"/>
+      <details key="end" value="1252"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/generateElement/%/%.5/%.13/%.8">
+      <details key="start" value="1271"/>
+      <details key="end" value="1277"/>
+      <details key="line" value="36"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/generateElement/%/%.5/%.13/%.9">
+      <details key="start" value="1278"/>
+      <details key="end" value="1286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/generateElement/%/%.5/%.13/%.9/a">
+      <details key="start" value="1278"/>
+      <details key="end" value="1279"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/generateElement/%/%.5/%.13/%.10">
+      <details key="start" value="1288"/>
+      <details key="end" value="1307"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/generateElement/%/%.5/%.13/%.11">
+      <details key="start" value="1308"/>
+      <details key="end" value="1316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/generateElement/%/%.5/%.13/%.11/b">
+      <details key="start" value="1308"/>
+      <details key="end" value="1309"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/generateElement/%/%.5/%.13/%.12">
+      <details key="start" value="1318"/>
+      <details key="end" value="1321"/>
+      <details key="line" value="37"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/generateElement/%/%.5/%.13/b">
+      <details key="start" value="1140"/>
+      <details key="end" value="1156"/>
+      <details key="line" value="35"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/generateElement/%/%.5/%.13/%.13">
+      <details key="start" value="1159"/>
+      <details key="end" value="1167"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/generateElement/%/%.5/%.13/%.13/a">
+      <details key="start" value="1159"/>
+      <details key="end" value="1160"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/generateElement/%/%.5/%.14">
+      <details key="start" value="1331"/>
+      <details key="end" value="1357"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/generateElement/%/%.5/%.15">
+      <details key="start" value="1358"/>
+      <details key="end" value="1366"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/generateElement/%/%.5/%.15/a">
+      <details key="start" value="1358"/>
+      <details key="end" value="1359"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/generateElement/%/%.5/%.16">
+      <details key="start" value="1368"/>
+      <details key="end" value="1372"/>
+      <details key="line" value="39"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/generateElement/%/%.5/a">
+      <details key="start" value="975"/>
+      <details key="end" value="994"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/generateElement/%/%.5/%.17">
+      <details key="start" value="997"/>
+      <details key="end" value="1012"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/generateElement/%/%.5/%.17/aMascota">
+      <details key="start" value="997"/>
+      <details key="end" value="1005"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/generateElement/%/%.6">
+      <details key="start" value="1381"/>
+      <details key="end" value="1408"/>
+      <details key="line" value="41"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/generateElement/%/%.7">
+      <details key="start" value="1410"/>
+      <details key="end" value="1726"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/generateElement/%/%.7/%">
+      <details key="start" value="1451"/>
+      <details key="end" value="1462"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/generateElement/%/%.7/%.1">
+      <details key="start" value="1463"/>
+      <details key="end" value="1471"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/generateElement/%/%.7/%.1/a">
+      <details key="start" value="1463"/>
+      <details key="end" value="1464"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/generateElement/%/%.7/%.2">
+      <details key="start" value="1473"/>
+      <details key="end" value="1490"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/generateElement/%/%.7/%.3">
+      <details key="start" value="1491"/>
+      <details key="end" value="1499"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/generateElement/%/%.7/%.3/a">
+      <details key="start" value="1491"/>
+      <details key="end" value="1492"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/generateElement/%/%.7/%.4">
+      <details key="start" value="1501"/>
+      <details key="end" value="1505"/>
+      <details key="line" value="44"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/generateElement/%/%.7/%.5">
+      <details key="start" value="1508"/>
+      <details key="end" value="1685"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/generateElement/%/%.7/%.5/%">
+      <details key="start" value="1538"/>
+      <details key="end" value="1549"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/generateElement/%/%.7/%.5/%.1">
+      <details key="start" value="1550"/>
+      <details key="end" value="1558"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/generateElement/%/%.7/%.5/%.1/b">
+      <details key="start" value="1550"/>
+      <details key="end" value="1551"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/generateElement/%/%.7/%.5/%.2">
+      <details key="start" value="1560"/>
+      <details key="end" value="1576"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/generateElement/%/%.7/%.5/%.3">
+      <details key="start" value="1577"/>
+      <details key="end" value="1585"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/generateElement/%/%.7/%.5/%.3/b">
+      <details key="start" value="1577"/>
+      <details key="end" value="1578"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/generateElement/%/%.7/%.5/%.4">
+      <details key="start" value="1587"/>
+      <details key="end" value="1590"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/generateElement/%/%.7/%.5/%.5">
+      <details key="start" value="1591"/>
+      <details key="end" value="1606"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/generateElement/%/%.7/%.5/%.5/b">
+      <details key="start" value="1591"/>
+      <details key="end" value="1592"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/generateElement/%/%.7/%.5/%.6">
+      <details key="start" value="1608"/>
+      <details key="end" value="1610"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/generateElement/%/%.7/%.5/%.7">
+      <details key="start" value="1611"/>
+      <details key="end" value="1628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/generateElement/%/%.7/%.5/%.7/%">
+      <details key="start" value="1611"/>
+      <details key="end" value="1621"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/generateElement/%/%.7/%.5/%.7/%/b">
+      <details key="start" value="1611"/>
+      <details key="end" value="1612"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/generateElement/%/%.7/%.5/%.8">
+      <details key="start" value="1630"/>
+      <details key="end" value="1636"/>
+      <details key="line" value="46"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/generateElement/%/%.7/%.5/%.9">
+      <details key="start" value="1637"/>
+      <details key="end" value="1645"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/generateElement/%/%.7/%.5/%.9/a">
+      <details key="start" value="1637"/>
+      <details key="end" value="1638"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/generateElement/%/%.7/%.5/%.10">
+      <details key="start" value="1647"/>
+      <details key="end" value="1662"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/generateElement/%/%.7/%.5/%.11">
+      <details key="start" value="1663"/>
+      <details key="end" value="1671"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/generateElement/%/%.7/%.5/%.11/b">
+      <details key="start" value="1663"/>
+      <details key="end" value="1664"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/generateElement/%/%.7/%.5/%.12">
+      <details key="start" value="1673"/>
+      <details key="end" value="1676"/>
+      <details key="line" value="47"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/generateElement/%/%.7/%.5/b">
+      <details key="start" value="1514"/>
+      <details key="end" value="1525"/>
+      <details key="line" value="45"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/generateElement/%/%.7/%.5/%.13">
+      <details key="start" value="1528"/>
+      <details key="end" value="1535"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/generateElement/%/%.7/%.5/%.13/a">
+      <details key="start" value="1528"/>
+      <details key="end" value="1529"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/generateElement/%/%.7/%.6">
+      <details key="start" value="1686"/>
+      <details key="end" value="1704"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/generateElement/%/%.7/%.7">
+      <details key="start" value="1705"/>
+      <details key="end" value="1713"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/generateElement/%/%.7/%.7/a">
+      <details key="start" value="1705"/>
+      <details key="end" value="1706"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/generateElement/%/%.7/%.8">
+      <details key="start" value="1715"/>
+      <details key="end" value="1718"/>
+      <details key="line" value="49"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/generateElement/%/%.7/a">
+      <details key="start" value="1416"/>
+      <details key="end" value="1428"/>
+      <details key="line" value="43"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/generateElement/%/%.7/%.9">
+      <details key="start" value="1431"/>
+      <details key="end" value="1448"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/generateElement/%/%.7/%.9/aMascota">
+      <details key="start" value="1431"/>
+      <details key="end" value="1439"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/generateElement/%/%.8">
+      <details key="start" value="1727"/>
+      <details key="end" value="3029"/>
+      <details key="line" value="51"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/generateElement/%/%.9">
+      <details key="start" value="3030"/>
+      <details key="end" value="3034"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/generateElement/%/%.10">
+      <details key="start" value="3036"/>
+      <details key="end" value="3111"/>
+      <details key="line" value="116"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/generateElement/%/%.11">
+      <details key="start" value="147"/>
+      <details key="end" value="161"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/generateElement/%/%.12">
+      <details key="start" value="170"/>
+      <details key="end" value="177"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/generateElement/%.1">
+      <details key="start" value="3119"/>
+      <details key="end" value="3120"/>
+      <details key="line" value="122"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/generateElement/%.2">
+      <details key="start" value="3120"/>
+      <details key="end" value="3719"/>
+      <details key="line" value="123"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/generateElement/%.2/%">
+      <details key="start" value="3161"/>
+      <details key="end" value="3437"/>
+      <details key="line" value="124"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/generateElement/%.2/%.1">
+      <details key="start" value="3438"/>
+      <details key="end" value="3453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/generateElement/%.2/%.1/aMascota">
+      <details key="start" value="3438"/>
+      <details key="end" value="3446"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/generateElement/%.2/%.2">
+      <details key="start" value="3455"/>
+      <details key="end" value="3712"/>
+      <details key="line" value="139"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/generateElement/%.2/%.3">
+      <details key="start" value="3127"/>
+      <details key="end" value="3142"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/generateElement/%.2/%.4">
+      <details key="start" value="3151"/>
+      <details key="end" value="3158"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/generateElement/%.3">
+      <details key="start" value="3720"/>
+      <details key="end" value="3722"/>
+      <details key="line" value="158"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/generateElement/%.4">
+      <details key="start" value="3722"/>
+      <details key="end" value="7199"/>
+      <details key="line" value="160"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/generateElement/%.4/%">
+      <details key="start" value="3770"/>
+      <details key="end" value="7192"/>
+      <details key="line" value="161"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/generateElement/%.4/%.1">
+      <details key="start" value="3729"/>
+      <details key="end" value="3751"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/generateElement/%.4/%.2">
+      <details key="start" value="3760"/>
+      <details key="end" value="3767"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/generateElement/%.5">
+      <details key="start" value="7200"/>
+      <details key="end" value="7201"/>
+      <details key="line" value="308"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/generateElement/%.6">
+      <details key="start" value="7201"/>
+      <details key="end" value="7409"/>
+      <details key="line" value="309"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/generateElement/%.6/%">
+      <details key="start" value="7242"/>
+      <details key="end" value="7402"/>
+      <details key="line" value="310"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/generateElement/%.6/%.1">
+      <details key="start" value="7208"/>
+      <details key="end" value="7223"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/generateElement/%.6/%.2">
+      <details key="start" value="7232"/>
+      <details key="end" value="7239"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/generateElement/%.7">
+      <details key="start" value="7410"/>
+      <details key="end" value="7411"/>
+      <details key="line" value="316"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/generateElement/%.8">
+      <details key="start" value="7411"/>
+      <details key="end" value="8286"/>
+      <details key="line" value="317"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/generateElement/%.8/%">
+      <details key="start" value="7451"/>
+      <details key="end" value="8279"/>
+      <details key="line" value="318"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/generateElement/%.8/%.1">
+      <details key="start" value="7418"/>
+      <details key="end" value="7432"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/generateElement/%.8/%.2">
+      <details key="start" value="7441"/>
+      <details key="end" value="7448"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/generateElement/%.9">
+      <details key="start" value="8287"/>
+      <details key="end" value="8288"/>
+      <details key="line" value="346"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/generateElement/%.10">
+      <details key="start" value="8288"/>
+      <details key="end" value="8524"/>
+      <details key="line" value="347"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/generateElement/%.10/%">
+      <details key="start" value="8332"/>
+      <details key="end" value="8517"/>
+      <details key="line" value="348"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/generateElement/%.10/%.1">
+      <details key="start" value="8295"/>
+      <details key="end" value="8313"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/generateElement/%.10/%.2">
+      <details key="start" value="8322"/>
+      <details key="end" value="8329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/generateElement/%.11">
+      <details key="start" value="8525"/>
+      <details key="end" value="8526"/>
+      <details key="line" value="355"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/generateElement/%.12">
+      <details key="start" value="8526"/>
+      <details key="end" value="9486"/>
+      <details key="line" value="356"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/generateElement/%.12/%">
+      <details key="start" value="8566"/>
+      <details key="end" value="9479"/>
+      <details key="line" value="357"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/generateElement/%.12/%.1">
+      <details key="start" value="8533"/>
+      <details key="end" value="8547"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/generateElement/%.12/%.2">
+      <details key="start" value="8556"/>
+      <details key="end" value="8563"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/generateElement/%.13">
+      <details key="start" value="9487"/>
+      <details key="end" value="9488"/>
+      <details key="line" value="402"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/generateElement/%.14">
+      <details key="start" value="9488"/>
+      <details key="end" value="9712"/>
+      <details key="line" value="403"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/generateElement/%.14/%">
+      <details key="start" value="9528"/>
+      <details key="end" value="9705"/>
+      <details key="line" value="404"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/generateElement/%.14/%.1">
+      <details key="start" value="9495"/>
+      <details key="end" value="9509"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/generateElement/%.14/%.2">
+      <details key="start" value="9518"/>
+      <details key="end" value="9525"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/generateElement/%.15">
+      <details key="start" value="9713"/>
+      <details key="end" value="9714"/>
+      <details key="line" value="411"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/generateElement/%.16">
+      <details key="start" value="9714"/>
+      <details key="end" value="9923"/>
+      <details key="line" value="412"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/generateElement/%.16/%">
+      <details key="start" value="9755"/>
+      <details key="end" value="9916"/>
+      <details key="line" value="413"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/generateElement/%.16/%.1">
+      <details key="start" value="9721"/>
+      <details key="end" value="9736"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/generateElement/%.16/%.2">
+      <details key="start" value="9745"/>
+      <details key="end" value="9752"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/generateElement/%.17">
+      <details key="start" value="9924"/>
+      <details key="end" value="9925"/>
+      <details key="line" value="421"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/generateElement/%.18">
+      <details key="start" value="9925"/>
+      <details key="end" value="11386"/>
+      <details key="line" value="422"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/generateElement/%.18/%">
+      <details key="start" value="9970"/>
+      <details key="end" value="11379"/>
+      <details key="line" value="423"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/generateElement/%.18/%.1">
+      <details key="start" value="9932"/>
+      <details key="end" value="9951"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/generateElement/%.18/%.2">
+      <details key="start" value="9960"/>
+      <details key="end" value="9967"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/generateElement/%.19">
+      <details key="start" value="11387"/>
+      <details key="end" value="11388"/>
+      <details key="line" value="485"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/generateElement/%.20">
+      <details key="start" value="11388"/>
+      <details key="end" value="11866"/>
+      <details key="line" value="486"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/generateElement/%.20/%">
+      <details key="start" value="11433"/>
+      <details key="end" value="11859"/>
+      <details key="line" value="487"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/generateElement/%.20/%.1">
+      <details key="start" value="11395"/>
+      <details key="end" value="11414"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/generateElement/%.20/%.2">
+      <details key="start" value="11423"/>
+      <details key="end" value="11430"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/generateElement/%.21">
+      <details key="start" value="11867"/>
+      <details key="end" value="11868"/>
+      <details key="line" value="511"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/generateElement/%.22">
+      <details key="start" value="11868"/>
+      <details key="end" value="22144"/>
+      <details key="line" value="512"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/generateElement/%.22/%">
+      <details key="start" value="11909"/>
+      <details key="end" value="22137"/>
+      <details key="line" value="513"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/generateElement/%.22/%.1">
+      <details key="start" value="11875"/>
+      <details key="end" value="11890"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/generateElement/%.22/%.2">
+      <details key="start" value="11899"/>
+      <details key="end" value="11906"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/generateElement/%.23">
+      <details key="start" value="22145"/>
+      <details key="end" value="22146"/>
+      <details key="line" value="869"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/generateElement/%.24">
+      <details key="start" value="22146"/>
+      <details key="end" value="23890"/>
+      <details key="line" value="870"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/generateElement/%.24/%">
+      <details key="start" value="22193"/>
+      <details key="end" value="23883"/>
+      <details key="line" value="871"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/generateElement/%.24/%.1">
+      <details key="start" value="22153"/>
+      <details key="end" value="22174"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/generateElement/%.24/%.2">
+      <details key="start" value="22183"/>
+      <details key="end" value="22190"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/generateElement/aMascota">
+      <details key="start" value="102"/>
+      <details key="end" value="120"/>
+      <details key="line" value="5"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

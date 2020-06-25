@@ -1,0 +1,7 @@
+# Tracing options for the POUEX.diagram plug-in
+
+# Common issues
+POUEX.diagram/debug=false
+
+# Visual IDs
+POUEX.diagram/debug/visualID=false

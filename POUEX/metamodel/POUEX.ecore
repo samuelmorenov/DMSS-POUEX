@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="POUEX" nsURI="http://POUEX/1.0" nsPrefix="POUEX">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Mascota">
+    <eAnnotations source="gmf.diagram"/>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SiempreNombre"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="SiempreNombre" value="self.nombre&lt;>''"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realizar" lowerBound="1"
+        upperBound="-1" eType="#//Acciones" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="poseer" lowerBound="1"
+        upperBound="-1" eType="#//Caracteristicas" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="estar" lowerBound="1" upperBound="-1"
+        eType="#//Estados" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Caracteristicas">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="valorInicial valorMaxNotEmpty valorIniMenorMax SiempreNombre valorMayorCero valorMaxMayorCero"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="255,0,0"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="valorInicial" value="self.valor->notEmpty()"/>
+      <details key="valorMaxNotEmpty" value="self.valorMax->notEmpty()"/>
+      <details key="valorIniMenorMax" value="self.valor &lt; self.valorMax"/>
+      <details key="SiempreNombre" value="self.nombre&lt;>''"/>
+      <details key="valorMayorCero" value="self.valor>=0"/>
+      <details key="valorMaxMayorCero" value="self.valorMax>=0"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valorMax" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modificada" lowerBound="1"
+        upperBound="-1" eType="#//Efectos" eOpposite="#//Efectos/modifica"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causar" lowerBound="1"
+        upperBound="-1" eType="#//Transiciones" containment="true" eOpposite="#//Transiciones/producida"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beneficioso" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Acciones">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="dosEfectosNoAfectanMismaCaract SiempreNombre"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="0,255,0"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="dosEfectosNoAfectanMismaCaract" value="self.causa.modifica->isUnique(nombre)"/>
+      <details key="SiempreNombre" value="self.nombre&lt;>''"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causa" lowerBound="1" upperBound="-1"
+        eType="#//Efectos" containment="true" eOpposite="#//Efectos/causada"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Efectos">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SiempreNombre SiempreValorModifica"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="source" value="causada"/>
+      <details key="target" value="modifica"/>
+      <details key="width" value="2"/>
+      <details key="color" value="255,0,150"/>
+      <details key="label" value="valorModifica"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="SiempreNombre" value="self.nombre&lt;>''"/>
+      <details key="SiempreValorModifica" value="self.valorModifica->notEmpty()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modifica" lowerBound="1"
+        eType="#//Caracteristicas" eOpposite="#//Caracteristicas/modificada"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valorModifica" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causada" lowerBound="1"
+        eType="#//Acciones" eOpposite="#//Acciones/causa"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Estados">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="SiempreNombre"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="0,0,255"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="SiempreNombre" value="self.nombre&lt;>''"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="estado" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="beneficioso" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modificado" lowerBound="1"
+        upperBound="-1" eType="#//Transiciones" eOpposite="#//Transiciones/modificar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transiciones">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="valorCambioNotEmpty SiempreNombre valorCambio valorCambioNoIgualOMayorValMaximoCaracteristica"/>
+    </eAnnotations>
+    <eAnnotations source="gmf.link">
+      <details key="source" value="producida"/>
+      <details key="target" value="modificar"/>
+      <details key="width" value="2"/>
+      <details key="color" value="0,255,100"/>
+      <details key="label" value="valorCambio"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="valorCambioNotEmpty" value="self.valorCambio->notEmpty()"/>
+      <details key="SiempreNombre" value="self.nombre&lt;>''"/>
+      <details key="valorCambio" value="self.valorCambio>=0"/>
+      <details key="valorCambioNoIgualOMayorValMaximoCaracteristica" value="self.valorCambio &lt; self.producida.valorMax"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modificar" lowerBound="1"
+        eType="#//Estados" eOpposite="#//Estados/modificado"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valorCambio" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="producida" lowerBound="1"
+        eType="#//Caracteristicas" eOpposite="#//Caracteristicas/causar"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Fisicas" eSuperTypes="#//Caracteristicas">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="247,168,81"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Emocionales" eSuperTypes="#//Caracteristicas">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="244,224,83"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Normales" eSuperTypes="#//Estados">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="112,112,216"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Criticos" eSuperTypes="#//Estados">
+    <eAnnotations source="gmf.node">
+      <details key="figure" value="rectangle"/>
+      <details key="color" value="190,142,185"/>
+      <details key="border.color" value="16,16,131"/>
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

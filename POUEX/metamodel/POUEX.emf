@@ -1,0 +1,81 @@
+@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore#/")
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
+@namespace(uri="http://POUEX/1.0", prefix="POUEX")
+package POUEX;
+
+@gmf.diagram
+@Ecore(constraints="SiempreNombre")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(SiempreNombre="self.nombre<>''")
+class Mascota {
+  attr String nombre;
+  val Acciones[+] realizar;
+  val Caracteristicas[+] poseer;
+  val Estados[+] estar;
+}
+
+@Ecore(constraints="valorInicial valorMaxNotEmpty valorIniMenorMax SiempreNombre valorMayorCero valorMaxMayorCero")
+@gmf.node(figure="rectangle", color="255,0,0", border.color="16,16,131", label="nombre")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(valorInicial="self.valor->notEmpty()", valorMaxNotEmpty="self.valorMax->notEmpty()", valorIniMenorMax="self.valor < self.valorMax", SiempreNombre="self.nombre<>''", valorMayorCero="self.valor>=0", valorMaxMayorCero="self.valorMax>=0")
+class Caracteristicas {
+  attr String nombre;
+  attr int valor;
+  attr int valorMax;
+  ref Efectos[+]#modifica modificada;
+  val Transiciones[+]#producida causar;
+  attr boolean beneficioso;
+}
+
+@Ecore(constraints="dosEfectosNoAfectanMismaCaract SiempreNombre")
+@gmf.node(figure="rectangle", color="0,255,0", border.color="16,16,131", label="nombre")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(dosEfectosNoAfectanMismaCaract="self.causa.modifica->isUnique(nombre)", SiempreNombre="self.nombre<>''")
+class Acciones {
+  attr String nombre;
+  val Efectos[+]#causada causa;
+}
+
+@Ecore(constraints="SiempreNombre SiempreValorModifica")
+@gmf.link(source="causada", target="modifica", width="2", color="255,0,150", label="valorModifica")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(SiempreNombre="self.nombre<>''", SiempreValorModifica="self.valorModifica->notEmpty()")
+class Efectos {
+  ref Caracteristicas[1]#modificada modifica;
+  attr String nombre;
+  attr int valorModifica;
+  ref Acciones[1]#causa causada;
+}
+
+@Ecore(constraints="SiempreNombre")
+@gmf.node(figure="rectangle", color="0,0,255", border.color="16,16,131", label="nombre")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(SiempreNombre="self.nombre<>''")
+class Estados {
+  attr boolean estado;
+  attr String nombre;
+  attr boolean beneficioso;
+  ref Transiciones[+]#modificar modificado;
+}
+
+@Ecore(constraints="valorCambioNotEmpty SiempreNombre valorCambio valorCambioNoIgualOMayorValMaximoCaracteristica")
+@gmf.link(source="producida", target="modificar", width="2", color="0,255,100", label="valorCambio")
+@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(valorCambioNotEmpty="self.valorCambio->notEmpty()", SiempreNombre="self.nombre<>''", valorCambio="self.valorCambio>=0", valorCambioNoIgualOMayorValMaximoCaracteristica="self.valorCambio < self.producida.valorMax")
+class Transiciones {
+  ref Estados[1]#modificado modificar;
+  attr int valorCambio;
+  ref Caracteristicas[1]#causar producida;
+  attr String nombre;
+}
+
+@gmf.node(figure="rectangle", color="247,168,81", border.color="16,16,131", label="nombre")
+class Fisicas extends Caracteristicas {
+}
+
+@gmf.node(figure="rectangle", color="244,224,83", border.color="16,16,131", label="nombre")
+class Emocionales extends Caracteristicas {
+}
+
+@gmf.node(figure="rectangle", color="112,112,216", border.color="16,16,131", label="nombre")
+class Normales extends Estados {
+}
+
+@gmf.node(figure="rectangle", color="190,142,185", border.color="16,16,131", label="nombre")
+class Criticos extends Estados {
+}
+

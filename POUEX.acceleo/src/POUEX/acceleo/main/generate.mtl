@@ -1,0 +1,928 @@
+[comment encoding = UTF-8 /]
+[module generate('http://POUEX/1.0')]
+
+
+[template public generateElement(aMascota : Mascota)]
+[comment @main/]
+[file ('Mascota.java', false, 'UTF-8')]
+
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Mascota {
+	private String nombre;
+	private boolean finDelJuego = false;
+	private static ArrayList<Acciones> acciones = new ArrayList<Acciones>();
+	private static ArrayList<Estados> estados = new ArrayList<Estados>();
+	private static ArrayList<Caracteristicas> caracteristicas = new ArrayList<Caracteristicas>();
+
+	public Mascota(String _nombre) {
+		nombre = _nombre;
+	}
+
+	public static Mascota crearMascota() {
+		// Creacion de Mascota
+		Mascota M = new Mascota("[aMascota.nombre/]");
+
+		// Creacion de estados
+		[for (a : Estados | aMascota.estar)]
+		Estados [a.nombre/] = new [a.eClass().name/]("[a.nombre/]", [a.beneficioso/], [a.estado/]);
+		M.anhadirEstado([a.nombre/]);
+		[/for]
+
+		// Creacion de Caracteristicas
+		[for (a : Caracteristicas | aMascota.poseer)]
+		Caracteristicas [a.nombre/] = new [a.eClass().name/]("[a.nombre/]", [a.beneficioso/], [a.valor/], [a.valorMax/]);
+			[for (b : Transiciones | a.causar)]
+			Transiciones [b.nombre/] = new Transiciones("[b.nombre/]", [b.valorCambio/], [b.modificar.nombre/]);
+			[a.nombre/].anhadirTransicion([b.nombre/]);
+			[/for]
+		M.anhadirCaracteristica([a.nombre/]);	
+		[/for]
+
+		// Creacion de Acciones
+		[for (a : Acciones | aMascota.realizar)]
+		Acciones [a.nombre/] = new Acciones("[a.nombre/]");
+			[for (b : Efectos | a.causa)]
+			Efectos [b.nombre/] = new Efectos("[b.nombre/]", [b.valorModifica/], [b.modifica.nombre/]);
+			[a.nombre/].anhadirEfecto([b.nombre/]);
+			[/for]
+		M.anhadirAccion([a.nombre/]);
+		[/for]
+
+		M.igualarEstadosCaracteristicas();
+
+		return M;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public static ArrayList<Acciones> getAcciones() {
+		return acciones;
+	}
+
+	public static void setAcciones(ArrayList<Acciones> acciones) {
+		Mascota.acciones = acciones;
+	}
+
+	public static ArrayList<Estados> getEstados() {
+		return estados;
+	}
+
+	public static void setEstados(ArrayList<Estados> estados) {
+		Mascota.estados = estados;
+	}
+
+	public static ArrayList<Caracteristicas> getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public static void setCaracteristicas(
+			ArrayList<Caracteristicas> caracteristicas) {
+		Mascota.caracteristicas = caracteristicas;
+	}
+
+	public void anhadirAccion(Acciones _A) {
+		acciones.add(_A);
+	}
+
+	public void anhadirCaracteristica(Caracteristicas _C) {
+		caracteristicas.add(_C);
+
+	}
+
+	public void anhadirEstado(Estados _E) {
+		estados.add(_E);
+
+	}
+
+	public void igualarEstadosCaracteristicas() {
+		for (int i = 0; i < caracteristicas.size(); i++) {
+			caracteristicas.get(i).ejecutarTodasLasTransiciones();
+		}
+
+	}
+
+	public void ejecutarInterfazGrafica(){
+		Interfaz I = new Interfaz(getNombre(), getAcciones(), getEstados(), getCaracteristicas());
+	}
+	
+
+	public static void main(String ['[]'/] args) {
+		Mascota M = crearMascota();
+		M.ejecutarInterfazGrafica();
+	}
+}
+[/file]
+
+[file ('Acciones.java', false, 'UTF-8')]
+
+import java.util.ArrayList;
+
+/**clase acciones*/
+public class Acciones {
+	private String nombre;
+	private ArrayList<Efectos> efectos = new ArrayList<Efectos>();
+	
+
+	public Acciones(String _nombre){
+		nombre=_nombre;
+	}
+	
+
+	public void realizarAccion(){
+		System.out.println("[aMascota.nombre/] realiza la accion "+nombre+" y esto causa: ");
+		for (int i = 0; i < efectos.size(); i++) {
+			efectos.get(i).realizarEfecto();
+		}
+	}
+
+	public void anhadirEfecto(Efectos e) {
+		efectos.add(e);
+		
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	
+}
+[/file]
+
+
+[file ('Caracteristicas.java', false, 'UTF-8')]
+import java.io.Serializable;
+import java.util.ArrayList;
+
+/**clase catacteristicas*/
+public class Caracteristicas implements Serializable{
+	
+	private String nombre;
+	private int valor;
+	private int valoxMax;
+	private boolean Beneficioso;
+	private ArrayList<Transiciones> transiciones = new ArrayList<Transiciones>();
+	
+	public Caracteristicas(String _nombre, boolean _beneficioso, int _valor, int _max) {
+		nombre=_nombre;
+		valor=_valor;
+		valoxMax=_max;
+		Beneficioso=_beneficioso;
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public int getValor() {
+		return valor;
+	}
+
+	public void setValor(int valor) {
+		this.valor = valor;
+	}
+
+	public int getValoxMax() {
+		return valoxMax;
+	}
+
+	public void setValoxMax(int valoxMax) {
+		this.valoxMax = valoxMax;
+	}
+
+
+	public void anhadirTransicion(Transiciones cambioSucio) {
+		transiciones.add(cambioSucio);
+		
+	}
+	public void mostrar() {
+		System.out.println(nombre+": "+valor);
+	}
+
+	/**
+	 * Este metodo sirve para poner todos los estados acorde a las caracteristicas
+	 */
+	public void ejecutarTodasLasTransiciones() {
+
+		for (int i = 0; i < transiciones.size(); i++) {
+			int valorCambio = transiciones.get(i).getValorCambio();
+			boolean caract = Beneficioso;
+			boolean estado = transiciones.get(i).getEstadoBeneficioso();
+			boolean nuevoEstado = false;
+			if (valor > valorCambio) {
+				if (caract && estado) {
+					nuevoEstado = true;
+				}
+				if (caract && !estado) {
+					nuevoEstado = false;
+				}
+				if (!caract && estado) {
+					nuevoEstado = false;
+				}
+				if (!caract && !estado) {
+					nuevoEstado = true;
+				}
+			} else {
+				if (caract && estado) {
+					nuevoEstado = false;
+				}
+				if (caract && !estado) {
+					nuevoEstado = true;
+				}
+				if (!caract && estado) {
+					nuevoEstado = true;
+				}
+				if (!caract && !estado) {
+					nuevoEstado = false;
+				}
+			}
+			transiciones.get(i).forzarTransicion(nuevoEstado);
+		}
+	}
+
+
+	public void comprobarTransiciones(int valorAnterior, int valorNuevo){
+		
+		for (int i = 0; i < transiciones.size(); i++) {
+			int valorCambio = transiciones.get(i).getValorCambio();
+			boolean caract = Beneficioso;
+			boolean estado = transiciones.get(i).getEstadoBeneficioso();
+			boolean nuevoEstado = false;
+			if(hayTransicion(valorAnterior, valorNuevo, valorCambio)){
+				if(valorNuevo>valorCambio){
+					if(caract && estado) nuevoEstado=true;
+					if(caract && !estado)nuevoEstado=false;
+					if(!caract && estado)nuevoEstado=false;
+					if(!caract && !estado)nuevoEstado=true;
+				}
+				else{
+					if(caract && estado)nuevoEstado=false;
+					if(caract && !estado)nuevoEstado=true;
+					if(!caract && estado)nuevoEstado=true;
+					if(!caract && !estado)nuevoEstado=false;
+				}
+
+				transiciones.get(i).causarTransicion(nuevoEstado);
+			}
+		}
+	}
+
+	private boolean hayTransicion(int anterior, int nuevo, int cambio) {
+		boolean hay = false;
+		if(anterior> cambio && nuevo==cambio)hay=true;
+		if(anterior<=cambio && nuevo> cambio)hay=true;
+		/*
+		//Explicacion:
+		if(anterior>cambio){
+			if(nuevo==cambio)hay=true;
+			if(nuevo>cambio)hay=false;
+			if(nuevo<cambio)hay=false;
+		}
+		if(anterior<cambio){
+			if(nuevo==cambio)hay=false;
+			if(nuevo>cambio)hay=true;
+			if(nuevo<cambio)hay=false;
+			
+		}
+		if(anterior==cambio){
+			if(nuevo==cambio)hay=false;
+			if(nuevo>cambio)hay=true;
+			if(nuevo<cambio)hay=false;
+		}
+		*/
+		return hay;
+	}
+}
+[/file]
+
+[file ('Criticos.java', false, 'UTF-8')]
+public class Criticos extends Estados {
+	public Criticos(String _nombre, boolean _beneficioso, boolean _estado) {
+		super(_nombre, _beneficioso, _estado);
+	}
+}
+[/file]
+
+[file ('Efectos.java', false, 'UTF-8')]
+public class Efectos{
+	private String nombre;
+	private int valorModifica;
+	private Caracteristicas caracteristicaModificada;
+
+	public Efectos(String _nombre, int _valor, Caracteristicas _caracteristicas) {
+		nombre=_nombre;
+		valorModifica=_valor;
+		caracteristicaModificada=_caracteristicas;
+	}
+	
+
+	public void realizarEfecto() {
+
+		
+		int valorAnterior = caracteristicaModificada.getValor();
+		int valorMax = caracteristicaModificada.getValoxMax();
+		int valorNuevo = valorAnterior+valorModifica;
+		
+		if(valorNuevo > valorMax)valorNuevo=valorMax;
+		if(valorNuevo < 0)valorNuevo=0;
+		
+		caracteristicaModificada.setValor(valorNuevo);
+		System.out.println(caracteristicaModificada.getNombre()+" modificada de "+valorAnterior+ " a "+valorNuevo);
+		caracteristicaModificada.comprobarTransiciones(valorAnterior, valorNuevo);
+	}
+}
+[/file]
+
+[file ('Emocionales.java', false, 'UTF-8')]
+public class Emocionales extends Caracteristicas {
+
+	public Emocionales(String _nombre, boolean _beneficioso, int _valor, int _max) {
+		super(_nombre, _beneficioso, _valor, _max);
+	}
+}
+[/file]
+
+[file ('Estados.java', false, 'UTF-8')]
+import java.io.Serializable;
+
+public class Estados implements Serializable{
+
+	private String nombre;
+	private boolean estado;
+	private boolean beneficioso;
+	
+	public Estados(String _nombre, boolean _beneficioso, boolean _estado) {
+		beneficioso=_beneficioso;
+		nombre=_nombre;
+		estado=_estado;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public boolean getEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	public boolean getBeneficioso() {
+		return beneficioso;
+	}
+	public void setBeneficioso(boolean beneficioso) {
+		this.beneficioso = beneficioso;
+	}
+	public void mostrar() {
+		if(estado) System.out.println("Esta "+nombre+".");
+		else System.out.println("No esta "+nombre+".");
+	}
+	public void activar() {
+		estado = true;
+		
+	}
+	public void desactivar() {
+		estado = false;
+		
+	}
+}
+[/file]
+
+[file ('Fisicas.java', false, 'UTF-8')]
+public class Fisicas extends Caracteristicas {
+
+	public Fisicas(String _nombre, boolean _beneficioso, int _valor, int _max) {
+		super(_nombre, _beneficioso, _valor, _max);
+	}
+}
+[/file]
+
+[file ('Normales.java', false, 'UTF-8')]
+public class Normales extends Estados{
+
+	public Normales(String _nombre, boolean _beneficioso, boolean _estado) {
+		super(_nombre, _beneficioso, _estado);
+	}
+
+}
+[/file]
+
+[file ('Transiciones.java', false, 'UTF-8')]
+import java.io.Serializable;
+
+public class Transiciones implements Serializable{
+
+
+	private String nombre;
+	/** El valor de cambio es el valor a partir del cual cambiaria
+	 * es decir, si el valor del cambio es 10, de 0 a 10 seria un estado
+	 * y de 11 en adelante otro*/
+	private int valorCambio;
+	private Estados estadoModificado;
+	
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	/** El valor de cambio es el valor a partir del cual cambiaria
+	 * es decir, si el valor del cambio es 10, de 0 a 10 seria un estado
+	 * y de 11 en adelante otro*/
+	public int getValorCambio() {
+		return valorCambio;
+	}
+
+
+	public void setValorCambio(int valorCambio) {
+		this.valorCambio = valorCambio;
+	}
+
+	public Transiciones(String _nombre, int _valor, Estados _estado) {
+		nombre=_nombre;
+		valorCambio=_valor;
+		estadoModificado=_estado;
+	}
+
+
+	public void forzarTransicion(boolean b){
+		if(b) estadoModificado.activar();
+		else estadoModificado.desactivar();
+	}
+	public void causarTransicion(boolean b) {
+		if(b){
+			estadoModificado.activar();
+			System.out.println("La mascota ahora esta "+estadoModificado.getNombre());
+		}
+		else{
+			estadoModificado.desactivar();
+			System.out.println("La mascota ya no esta "+estadoModificado.getNombre());
+		}
+		
+	}
+
+
+	public boolean getEstadoBeneficioso() {
+		return estadoModificado.getBeneficioso();
+	}
+}
+[/file]
+
+[file ('Boton_Accion.java', false, 'UTF-8')]
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+
+public class Boton_Accion extends JButton implements ActionListener {
+	Acciones A;
+
+	public Boton_Accion(Acciones _A) {
+		super(_A.getNombre());
+		A = _A;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		A.realizarAccion();
+	}
+
+	public void accionar() {
+		A.realizarAccion();
+	}
+}
+[/file]
+
+[file ('Interfaz.java', false, 'UTF-8')]
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.font.TextAttribute;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
+import javax.swing.*;
+
+public class Interfaz extends JFrame implements ActionListener {
+
+	private JPanel PanelAccion;
+	private JPanel PanelEstados;
+	private JPanel PanelFoto;
+	private JPanel PanelConsola;
+	private ArrayList<Acciones> acciones;
+	private static ArrayList<Estados> estados;
+	private static ArrayList<Caracteristicas> caracteristicas;
+	private ScheduledExecutorService hiloTiempo;
+	private String gameOver;
+	public Interfaz(String _nombre, ArrayList<Acciones> _acciones,
+			ArrayList<Estados> _estados,
+			ArrayList<Caracteristicas> _caracteristicas) {
+
+		acciones = _acciones;
+		estados = _estados;
+		caracteristicas = _caracteristicas;
+		setTitle("POUEx " + _nombre); // Titulo de la ventana
+		setBounds(0, 0, 750, 750); // Tamanho de la ventana
+		setVisible(true); // Hacemos que la ventana sea visible
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Al cerrar la ventana se cierra el programa
+
+		Container contenedor = getContentPane(); // Inicializacion del panel de contenido
+
+		PanelFoto = new JPanel();
+		PanelConsola = new JPanel();
+		PanelAccion = new JPanel();
+		PanelEstados = new JPanel();
+
+		contenedor.add(PanelFoto, BorderLayout.NORTH);
+		contenedor.add(PanelConsola, BorderLayout.SOUTH);
+		contenedor.add(PanelAccion, BorderLayout.CENTER);
+		contenedor.add(PanelEstados, BorderLayout.WEST);
+
+		inicializarPanelFoto();
+		inicializarPanelConsola();
+		inicializarPanelAccion();
+		inicializarPanelEstados();
+		paintComponents(getGraphics());
+	}
+
+	private void inicializarPanelFoto() {
+		JPanel panelImagen = new JPanel();
+		panelImagen.setBounds(0, 0, 200, 200);
+		JLabel imagen = new JLabel(new ImageIcon("pictures/POUX.gif"));
+		panelImagen.add(imagen);
+		PanelFoto.add(panelImagen);
+	}
+
+	private void inicializarPanelConsola() {
+		// JLabel consola = new JLabel("Consola");
+		// PanelConsola.add(consola);
+	}
+
+	private void inicializarPanelAccion() {
+		// Separamos el panel izquierdo en 3
+		int numCeldas;
+		
+		/** numCeldasSinAcciones */
+		int n = 4;
+		numCeldas = acciones.size() + n;
+		PanelAccion.setLayout(new GridLayout(numCeldas, 1));
+
+		JLabel Acciones = new JLabel("Acciones");
+		Font fuente = new Font("Arial", Font.BOLD, 20);
+		Map atributos = fuente.getAttributes();
+		atributos.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+		Acciones.setFont(fuente.deriveFont(atributos));
+		Acciones.setHorizontalAlignment(SwingConstants.CENTER);// Esto pone el texto centrado
+		PanelAccion.add(Acciones);
+
+		for (int i = 0; i < numCeldas - n; i++) {
+			// Aqui comprobamos que la nueva accion no es tiempo, de ser asi
+			// creamos la accion especial tiempo.
+			if (acciones.get(i).getNombre() != "Tiempo" && acciones.get(i).getNombre() != "tiempo") {
+				Boton_Accion _Acciones = new Boton_Accion(acciones.get(i));
+				_Acciones.addActionListener(this);
+				PanelAccion.add(_Acciones);
+			} else {
+				crearAccionTiempo(acciones.get(i));
+			}
+		}
+		
+		
+		inicializarPanelGuardado(PanelAccion);
+	}
+	@SuppressWarnings("unchecked")
+	private void inicializarPanelGuardado(JPanel PanelGuardado){
+		//Escribir guardado
+		
+		JLabel GuardarPartida = new JLabel("Guardar partida: ");
+			Font fuente = new Font("Arial", Font.BOLD, 20);
+			Map atributos = fuente.getAttributes();
+			atributos.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+			GuardarPartida.setFont(fuente.deriveFont(atributos));
+			GuardarPartida.setHorizontalAlignment(SwingConstants.CENTER);// Esto pone el texto centrado
+		PanelGuardado.add(GuardarPartida);
+		
+		//Boton de Save
+		@SuppressWarnings("serial")
+		class Boton_Save extends JButton implements ActionListener {
+
+			public Boton_Save(String nombre) {
+				super(nombre);
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				ObjectOutputStream archivo = null;
+				
+				try {
+					archivo = new ObjectOutputStream(new FileOutputStream("saves/pouex.save"));
+					
+					try {
+						archivo.writeObject(estados);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					try {
+						archivo.writeObject(caracteristicas);
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					try {
+						archivo.close();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+					System.out.println("Archivo creado con exito.");
+					
+					
+				} catch (FileNotFoundException e1) {
+					System.out.println("No se ha encontrado el directorio para guardar el archivo.");
+					System.out.println("Por favor, cree la carpeta ''saves'' en el directorio del juego.");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				
+
+			}
+		}
+		Boton_Save Save = new Boton_Save("Guardar");
+		Save.addActionListener(Save);
+		PanelAccion.add(Save);
+		
+		
+		
+		//Boton de Load
+		@SuppressWarnings("serial")
+		class Boton_Load extends JButton implements ActionListener {
+
+			public Boton_Load(String nombre) {
+				super(nombre);
+			}
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+	
+
+				ArrayList<Estados> auxE = null;
+				ArrayList<Caracteristicas> auxC = null;
+				ObjectInputStream ficharoLectura = null;
+				
+				try {
+					ficharoLectura = new ObjectInputStream(new FileInputStream("saves/pouex.save"));
+					
+
+					
+					try {
+						auxE = (ArrayList<Estados>) ficharoLectura.readObject();
+					} catch (ClassNotFoundException e3) {
+						e3.printStackTrace();
+					} catch (IOException e3) {
+						e3.printStackTrace();
+					}
+					try {
+						auxC = (ArrayList<Caracteristicas>) ficharoLectura.readObject();
+					} catch (ClassNotFoundException e2) {
+						e2.printStackTrace();
+					} catch (IOException e2) {
+						e2.printStackTrace();
+					}
+					try {
+						ficharoLectura.close();
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					}
+
+					
+					
+					
+					if(auxE != null && auxC != null){
+						ponerEstadosYCaracteristicas(auxE, auxC);
+						System.out.println("Archivo cargado con exito.");
+					}else System.out.println("Error al cargar el fichero");
+
+					
+					mostrarCambiosEstados();
+					
+					
+				} catch (FileNotFoundException e4) {
+					System.out.println("No se ha encontrado el archivo de guardado.");
+				} catch (IOException e4) {
+					e4.printStackTrace();
+				}
+			}
+		}
+		Boton_Load Load = new Boton_Load("Cargar");
+		Load.addActionListener(Load);
+		PanelAccion.add(Load);
+		
+	}
+	private void ponerEstadosYCaracteristicas(ArrayList<Estados> _E, ArrayList<Caracteristicas> _C){
+		for (int i = 0; i < _E.size(); i++) {
+			boolean estado = _E.get(i).getEstado();
+			estados.get(i).setEstado(estado);
+		}
+		for (int i = 0; i < _C.size(); i++) {
+			int valor = _C.get(i).getValor();
+			caracteristicas.get(i).setValor(valor);
+		}		
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	private void inicializarPanelEstados() {
+		int numCeldas;
+		int numEstados;
+		int numCaract;
+		numEstados = estados.size();
+		numCaract = caracteristicas.size();
+		numCeldas = numCaract + numEstados + 2;
+
+		PanelEstados.setLayout(new GridLayout(numCeldas, 1));
+
+		JLabel Estados = new JLabel("Estados: "); // Texto estado subrayado y en negrita
+		Font fuente = new Font("Arial", Font.BOLD, 20);
+		Map atributos = fuente.getAttributes();
+		atributos.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+		Estados.setFont(fuente.deriveFont(atributos));
+
+		PanelEstados.add(Estados);
+		for (int i = 0; i < numEstados; i++) {
+			JLabel _Estados;
+			if (estados.get(i).getEstado()) {
+				_Estados = new JLabel("        " + "Esta "
+						+ estados.get(i).getNombre() + "        ");
+			} else {
+				_Estados = new JLabel("        " + "No esta "
+						+ estados.get(i).getNombre() + "        ");
+			}
+			PanelEstados.add(_Estados);
+		}
+
+		JLabel Caract = new JLabel("Caracteristicas: ");
+		Caract.setFont(fuente.deriveFont(atributos));
+
+		PanelEstados.add(Caract);
+		for (int i = 0; i < numCaract; i++) {
+			JLabel _Caract = new JLabel("        "
+					+ caracteristicas.get(i).getNombre() + ": "
+					+ caracteristicas.get(i).getValor());
+			PanelEstados.add(_Caract);
+		}
+
+	}
+
+	private void crearAccionTiempo(Acciones _ATiempo) {
+		final Acciones ATiempo = _ATiempo;
+		Runnable helloRunnable = new Runnable() {
+			public void run() {
+				ATiempo.realizarAccion();
+				mostrarCambiosEstados();
+			}
+		};
+
+		hiloTiempo = Executors.newScheduledThreadPool(1);
+		hiloTiempo.scheduleAtFixedRate(helloRunnable, 15, 15, TimeUnit.SECONDS);//TODO cambiar el tiempo
+		;
+	}
+
+
+	private void mostrarCambiosEstados() {
+		PanelEstados.removeAll();
+		inicializarPanelEstados();
+		paintComponents(getGraphics());
+
+		String causa = hayEstadoCritico();
+		if (causa != null) {
+			InterfazMuerte X = new InterfazMuerte(causa);
+			mostrarMascota();
+			this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // Al cerrar la  ventana NO se cierra el programa
+			this.hide();
+			this.hiloTiempo.shutdown();
+		}
+
+	}
+	private void mostrarMascota() {
+		System.out.println("Caracteristicas: ");
+		for (int i = 0; i < caracteristicas.size(); i++) {
+			System.out.print("    ");
+			caracteristicas.get(i).mostrar();
+		}
+		System.out.println("Estados: ");
+		for (int i = 0; i < estados.size(); i++) {
+			System.out.print("    ");
+			estados.get(i).mostrar();
+		}
+	}
+	private static String hayEstadoCritico() {
+		for (int i = 0; i < estados.size(); i++) {
+			if (estados.get(i) instanceof Criticos) {
+				boolean activo = estados.get(i).getEstado();
+				boolean beneficioso = estados.get(i).getBeneficioso();
+				String nombre = estados.get(i).getNombre();
+				if (!activo && beneficioso) {
+					return "no esta " + nombre;
+				}
+				if (activo && !beneficioso) {
+					return "esta " + nombre;
+				}
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent evento) {
+		Boton_Accion aux = (Boton_Accion) evento.getSource();
+		aux.accionar();
+		mostrarCambiosEstados();
+
+	}
+}
+[/file]
+
+[file ('InterfazMuerte.java', false, 'UTF-8')]
+import java.awt.Container;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
+public class InterfazMuerte extends JFrame implements ActionListener{
+
+	public InterfazMuerte(String causa) {
+		setTitle("Fin del juego"); // Titulo de la ventana
+		setBounds(0, 0, 400, 400); // Tamanho de la ventana
+		setVisible(true); // Hacemos que la ventana sea visible
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Al cerrar la ventana se cierra el programa
+
+		Container contenedor = getContentPane();
+		contenedor.setLayout(new GridLayout(2, 1));
+		
+		JPanel PanelFoto = new JPanel();
+			JPanel panelImagen = new JPanel();
+			panelImagen.setBounds(0, 0, 200, 200);
+				JLabel imagen = new JLabel(new ImageIcon("pictures/POUX_Death.jpg"));
+				panelImagen.add(imagen);
+			PanelFoto.add(panelImagen);
+		
+		JPanel PanelTextoYBoton = new JPanel();
+		PanelTextoYBoton.setLayout(new GridLayout(3, 1));
+			JLabel texto = new JLabel("Tu mascota "+causa+" :(");
+				texto.setHorizontalAlignment(SwingConstants.CENTER);
+			JLabel texto2 = new JLabel("--GAME OVER--");
+				texto2.setHorizontalAlignment(SwingConstants.CENTER);
+			
+			JButton X = new JButton("Cerrar el Juego.");
+				X.addActionListener(this);
+		
+				PanelTextoYBoton.add(texto);
+				PanelTextoYBoton.add(texto2);
+				PanelTextoYBoton.add(X);
+				
+		contenedor.add(panelImagen);
+		contenedor.add(PanelTextoYBoton);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		System.exit(0); 
+	}
+
+}
+[/file]
+[/template]

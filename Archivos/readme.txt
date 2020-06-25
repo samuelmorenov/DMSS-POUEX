@@ -1,0 +1,1 @@
+Ejemplo funcional de la aplicacíon, para poder utilizar correctamente la interfaz, cree la carpeta saves en el directorio del proyecto e importa la carpeta pictures para que se vea el gif durante la ejecución de la aplicacion.
